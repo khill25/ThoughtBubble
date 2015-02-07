@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "SFMapViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -19,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    /*
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
@@ -28,6 +28,16 @@
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
+     */
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIViewController *viewController = [[SFMapViewController alloc] init]; // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
+    
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -56,6 +66,7 @@
 
 #pragma mark - Split view
 
+/*
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
     if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
@@ -64,6 +75,7 @@
         return NO;
     }
 }
+ */
 
 #pragma mark - Core Data stack
 
@@ -144,5 +156,14 @@
         }
     }
 }
+
+/*
+ Yelp info
+ Consumer Key	lmXJ-mwbehRddvOBpwg2UQ
+ Consumer Secret	BxiD5Po_Qu1yTbEnJty31PSClLU
+ Token	jJA0r917tY493QdTgIp7MW-cOm2CofTi
+ Token Secret	Llxcg1bkc4KgR55q7zag3cs_eWI
+ 
+*/
 
 @end
