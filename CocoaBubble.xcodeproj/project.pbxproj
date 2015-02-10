@@ -30,6 +30,7 @@
 		611826ED29B439CD2A676F53 /* navigation12.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182AE8C94DA9D3DDF72A54 /* navigation12.png */; };
 		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
 		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
+		61182E033090F681F2999C9A /* SFPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 611823B6BD68F43E1A1DF6DD /* SFPlace.m */; };
 		61182E03F35812166E90CB26 /* wifi5.png in Resources */ = {isa = PBXBuildFile; fileRef = 611826A52E2E80DD0D0451C3 /* wifi5.png */; };
 		61182EA0D07C85E071888C40 /* refresh62.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182CEE1391AF67B6DC436A /* refresh62.png */; };
 		61182EB5DE4EB6AA0914352D /* cup3.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821EAF2B3FB6047D246EB /* cup3.png */; };
@@ -82,6 +83,7 @@
 		611821218B690C8D275EB0E0 /* location44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location44.png; sourceTree = "<group>"; };
 		611821EAF2B3FB6047D246EB /* cup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup3.png; sourceTree = "<group>"; };
 		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
+		611823B6BD68F43E1A1DF6DD /* SFPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlace.m; sourceTree = "<group>"; };
 		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
 		6118266A3F275EDB09F17D47 /* coffee123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee123.png; sourceTree = "<group>"; };
 		611826A52E2E80DD0D0451C3 /* wifi5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi5.png; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				2F7178301A86B09E00B1402C /* SFPlace.h */,
+				611823B6BD68F43E1A1DF6DD /* SFPlace.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				2F7177FB1A86ACB600B1402C /* main.m in Sources */,
 				2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */,
 				611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */,
+				61182E033090F681F2999C9A /* SFPlace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

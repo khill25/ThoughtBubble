@@ -91,9 +91,17 @@ BOOL hasUpdated = NO;
                           longitude:currentLocation.coordinate.longitude
                    finishedDelegate:^(NSArray* locations, NSError* error) {
 
-                       // NSArray of SFPlaces
-                       // Create dots on map
-                       // dots are collapsed thoughtbubbles
+                       if (error) {
+                           // Bad news bears!
+                       }
+
+                       if (locations) {
+
+                           // NSArray of SFPlaces
+                           // Create dots on map
+                           // dots are collapsed thoughtbubbles
+                           [self.mapView addAnnotations:locations];
+                       }
 
     }];
 

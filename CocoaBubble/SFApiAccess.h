@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 #import "SFNetworkingManager.h"
 
 @interface SFApiAccess : NSObject
