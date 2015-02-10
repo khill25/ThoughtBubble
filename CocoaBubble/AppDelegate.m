@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SFMapViewController.h"
+#import "SFLandingViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    /*
+    /* Some old launch code I left in since I started the project from a detail view controller
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
@@ -30,10 +31,15 @@
     return YES;
      */
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    
+
+    /*
     UIViewController *viewController = [[SFMapViewController alloc] init]; // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
-    
-    self.window.rootViewController = viewController;
+    */
+
+    SFLandingViewController *viewController = [[SFLandingViewController alloc] init];
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:viewController];
+
+    self.window.rootViewController = controller;
     [self.window makeKeyAndVisible];
     
     return YES;

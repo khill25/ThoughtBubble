@@ -25,6 +25,8 @@
 		2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7178361A86B2BD00B1402C /* SFMapViewController.m */; };
 		2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7178381A86B47F00B1402C /* SFMapViewController.xib */; };
 		2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */; };
+		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
+		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
 		C04B013362530CC133CCCB51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420DB044EE4D7EF5276540EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,9 @@
 		2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKThoughtBubbleView.m; sourceTree = "<group>"; };
 		41B3A9BD3DB443C2EC36FD4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
+		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
+		6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFLandingViewController.xib; sourceTree = "<group>"; };
 		E2D0B6A050D9DD901CDA0E57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +220,7 @@
 				2F71782F1A86B03300B1402C /* SettingsController */,
 				2F71782E1A86B02C00B1402C /* MapDetailController */,
 				2F71782D1A86B02200B1402C /* MapController */,
+				61182D7D26CBA1A76408001E /* LandingController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +264,16 @@
 				420DB044EE4D7EF5276540EE /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61182D7D26CBA1A76408001E /* LandingController */ = {
+			isa = PBXGroup;
+			children = (
+				611822F84DFD00992E412325 /* SFLandingViewController.h */,
+				611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */,
+				6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */,
+			);
+			name = LandingController;
 			sourceTree = "<group>";
 		};
 		7E0F938116F7D59FED16245A /* Pods */ = {
@@ -355,6 +371,7 @@
 				2F71780F1A86ACB600B1402C /* LaunchScreen.xib in Resources */,
 				2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */,
 				2F71780C1A86ACB600B1402C /* Images.xcassets in Resources */,
+				611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +432,7 @@
 				2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */,
 				2F7177FB1A86ACB600B1402C /* main.m in Sources */,
 				2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */,
+				611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
