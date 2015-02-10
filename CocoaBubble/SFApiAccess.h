@@ -11,4 +11,8 @@
 
 @interface SFApiAccess : NSObject
 
++(void)searchWithLatitude:(double)latitude
+                    longitude:(double)longitude
+             finishedDelegate:(void (^)(NSArray*, NSError*))finishedDelegate;
+
 @end

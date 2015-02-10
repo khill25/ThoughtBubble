@@ -20,12 +20,36 @@
     
     _tabController = [[UITabBarController alloc] init];
     _mapViewController = [[SFMapViewController alloc] init];
-    _mapViewController.tabBarItem.title = @"Map";
+
+    UIImage* cup = [UIImage imageNamed:@"cup3.png"];
+
+    /*CGRect frame = CGRectMake(0,0,64,64);
+    UIButton* barItem = [[UIButton alloc] initWithFrame:frame];
+    [barItem setBackgroundImage:cup forState:UIControlStateNormal];
+    */
+
+    UITabBarItem *item = [[UITabBarItem alloc] init];
+    [item setImage:cup];
+
+    [_tabController setTabBarItem:item];
+
+    //_mapViewController.tabBarItem.title = @"Explore";
 
     _tabController.view.frame = self.view.frame;
 
-    [_tabController setViewControllers:@[_mapViewController]];
-    
+    // Wrap up the map into navigaton controller
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:_mapViewController];
+
+    [_tabController setViewControllers:@[controller]];
+
+    UIImage* refreshImage = [UIImage imageNamed:@"refresh62.png"];
+    CGRect refreshFrame = CGRectMake(0,0,64,64);
+    UIButton* refresh = [[UIButton alloc] initWithFrame:refreshFrame];
+    [refresh setImage:refreshImage forState:UIControlStateNormal];
+
+    UIBarButtonItem *refreshButton =[[UIBarButtonItem alloc] initWithCustomView:refresh];
+    [self.navigationController.navigationItem setLeftBarButtonItem:refreshButton animated:YES];
+
     [self.view addSubview:_tabController.view];
 
 }

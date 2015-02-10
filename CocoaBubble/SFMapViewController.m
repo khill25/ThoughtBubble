@@ -8,10 +8,13 @@
 
 #import "SFMapViewController.h"
 #import "SFNetworkingManager.h"
+#import "SFApiAccess.h"
 
 @interface SFMapViewController ()
 
 @end
+
+NSString* kControllerTitle = @"Explore";
 
 BOOL hasUpdated = NO;
 
@@ -21,8 +24,17 @@ BOOL hasUpdated = NO;
     [super viewDidLoad];
     // Do view setup here.
 
-    self.title = @"Map";
-    
+    self.title = kControllerTitle;
+
+    // Setup the refresh button
+    UIImage* refreshImage = [UIImage imageNamed:@"refresh62.png"];
+    CGRect frame = CGRectMake(0,0,32,32);
+    UIButton* barItem = [[UIButton alloc] initWithFrame:frame];
+    [barItem setBackgroundImage:refreshImage forState:UIControlStateNormal];
+    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithCustomView:barItem];
+    [item setAction:@selector(refresh:)];
+    self.navigationItem.rightBarButtonItem = item;
+
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
 
@@ -35,20 +47,25 @@ BOOL hasUpdated = NO;
     self.mapView.showsUserLocation = YES;
 
     // Should probably zoom in too because there is no reason to be staring at the entire country
-    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(37.7833,-122.4167);
+    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(37.7833,-122.4167); // start in SF!!!
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, .05, .05)];
     [self.mapView setRegion:adjustedRegion animated:YES];
 
 }
 
+-(void)refresh:(id)sender {
+
+    hasUpdated = false;
+    [self.locationManager startUpdatingLocation];
+
+}
 // Location Manager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    //NSLog(@"%@", [locations lastObject]);
-
 
     if (!hasUpdated) {
         [self showPlaces:[locations lastObject]];
         hasUpdated = YES;
+        [self.locationManager stopUpdatingLocation];
     }
 }
 
@@ -69,34 +86,16 @@ BOOL hasUpdated = NO;
 -(void)showPlaces:(CLLocation *)currentLocation {
 
 
-    NSString* location = [NSString stringWithFormat:@"location=%f,%f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
-    NSString* baseUrl = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?%@&keyword=", location];
-    NSString* queryTerms = @"coffee+shops+hacker+spaces";
+    //currentLocation.coordinate.latitude
+    [SFApiAccess searchWithLatitude:currentLocation.coordinate.latitude
+                          longitude:currentLocation.coordinate.longitude
+                   finishedDelegate:^(NSArray* locations, NSError* error) {
 
-    // The authkey here is super janky but this is still a work in progress.
-    NSString* authKey = @"AIzaSyBDZYf-1dMAoIY9bAzP1jh-o-hzJxD0lbs";
+                       // NSArray of SFPlaces
+                       // Create dots on map
+                       // dots are collapsed thoughtbubbles
 
-    // Pull out the 1500 to a pref so the user can change it.
-    NSString* formatted = [NSString stringWithFormat:@"%@%@&raduis=1500&key=%@", baseUrl, queryTerms, authKey];
-
-    // Do network call
-    [SFNetworkingManager postRequestWithUrl:formatted completionHandler:^(id response, NSError* error) {
-
-        if (error) {
-            NSLog(@"Error getting data from network. %@", error);
-            [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This is embarassing. We are having trouble getting nearby locations. Give it a second and try again." preferredStyle:UIAlertControllerStyleAlert];
-        } else {
-            // do some stuff with this data!!!
-            NSDictionary *json = (NSDictionary*)response;
-            // Parse it!
-            [json valueForKey:@""];
-            [json valueForKey:@""];
-            [json valueForKey:@""];
-            [json valueForKey:@""];
-        }
-
-        }
-    ];
+    }];
 
 
 }

@@ -25,8 +25,15 @@
 		2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7178361A86B2BD00B1402C /* SFMapViewController.m */; };
 		2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7178381A86B47F00B1402C /* SFMapViewController.xib */; };
 		2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */; };
+		61182106706F26F48B5D24CB /* coffee123.png in Resources */ = {isa = PBXBuildFile; fileRef = 6118266A3F275EDB09F17D47 /* coffee123.png */; };
+		611825724A053DD27FFCCD36 /* location44.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821218B690C8D275EB0E0 /* location44.png */; };
+		611826ED29B439CD2A676F53 /* navigation12.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182AE8C94DA9D3DDF72A54 /* navigation12.png */; };
 		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
 		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
+		61182E03F35812166E90CB26 /* wifi5.png in Resources */ = {isa = PBXBuildFile; fileRef = 611826A52E2E80DD0D0451C3 /* wifi5.png */; };
+		61182EA0D07C85E071888C40 /* refresh62.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182CEE1391AF67B6DC436A /* refresh62.png */; };
+		61182EB5DE4EB6AA0914352D /* cup3.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821EAF2B3FB6047D246EB /* cup3.png */; };
+		61182FB5CB20E2A22CA47133 /* target53.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182E4EC9CA35FA4A02D351 /* target53.png */; };
 		C04B013362530CC133CCCB51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420DB044EE4D7EF5276540EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -72,9 +79,16 @@
 		2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKThoughtBubbleView.m; sourceTree = "<group>"; };
 		41B3A9BD3DB443C2EC36FD4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		611821218B690C8D275EB0E0 /* location44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location44.png; sourceTree = "<group>"; };
+		611821EAF2B3FB6047D246EB /* cup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup3.png; sourceTree = "<group>"; };
 		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
 		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
+		6118266A3F275EDB09F17D47 /* coffee123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee123.png; sourceTree = "<group>"; };
+		611826A52E2E80DD0D0451C3 /* wifi5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi5.png; sourceTree = "<group>"; };
 		6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFLandingViewController.xib; sourceTree = "<group>"; };
+		61182AE8C94DA9D3DDF72A54 /* navigation12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation12.png; sourceTree = "<group>"; };
+		61182CEE1391AF67B6DC436A /* refresh62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh62.png; sourceTree = "<group>"; };
+		61182E4EC9CA35FA4A02D351 /* target53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target53.png; sourceTree = "<group>"; };
 		E2D0B6A050D9DD901CDA0E57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +179,7 @@
 				2F71780D1A86ACB600B1402C /* LaunchScreen.xib */,
 				2F7177FF1A86ACB600B1402C /* CocoaBubble.xcdatamodeld */,
 				2F7177F81A86ACB600B1402C /* Supporting Files */,
+				61182E0490CBD14C1DD00EF0 /* images */,
 			);
 			path = CocoaBubble;
 			sourceTree = "<group>";
@@ -276,6 +291,20 @@
 			name = LandingController;
 			sourceTree = "<group>";
 		};
+		61182E0490CBD14C1DD00EF0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				611821218B690C8D275EB0E0 /* location44.png */,
+				611826A52E2E80DD0D0451C3 /* wifi5.png */,
+				61182AE8C94DA9D3DDF72A54 /* navigation12.png */,
+				6118266A3F275EDB09F17D47 /* coffee123.png */,
+				61182CEE1391AF67B6DC436A /* refresh62.png */,
+				611821EAF2B3FB6047D246EB /* cup3.png */,
+				61182E4EC9CA35FA4A02D351 /* target53.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		7E0F938116F7D59FED16245A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +401,13 @@
 				2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */,
 				2F71780C1A86ACB600B1402C /* Images.xcassets in Resources */,
 				611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */,
+				611825724A053DD27FFCCD36 /* location44.png in Resources */,
+				61182E03F35812166E90CB26 /* wifi5.png in Resources */,
+				611826ED29B439CD2A676F53 /* navigation12.png in Resources */,
+				61182106706F26F48B5D24CB /* coffee123.png in Resources */,
+				61182EA0D07C85E071888C40 /* refresh62.png in Resources */,
+				61182EB5DE4EB6AA0914352D /* cup3.png in Resources */,
+				61182FB5CB20E2A22CA47133 /* target53.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
