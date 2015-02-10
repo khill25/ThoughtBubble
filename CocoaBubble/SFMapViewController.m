@@ -63,9 +63,12 @@ BOOL hasUpdated = NO;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
 
     if (!hasUpdated) {
-        [self showPlaces:[locations lastObject]];
-        hasUpdated = YES;
-        [self.locationManager stopUpdatingLocation];
+        __weak SFMapViewController* weakSelf = self;
+        dispatch_after(5000, dispatch_get_main_queue(), ^{
+            [weakSelf showPlaces:[locations lastObject]];
+            hasUpdated = YES;
+            [weakSelf.locationManager stopUpdatingLocation];
+        });
     }
 }
 
@@ -101,6 +104,8 @@ BOOL hasUpdated = NO;
                            // Create dots on map
                            // dots are collapsed thoughtbubbles
                            [self.mapView addAnnotations:locations];
+                           MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 2000, 2000)];
+                           [self.mapView setRegion:adjustedRegion animated:YES];
                        }
 
     }];
