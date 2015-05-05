@@ -17,10 +17,13 @@
 
 // Expanded info
 @property (nonatomic, retain) NSString* name;
-@property (nonatomic) NSInteger* rating;
+@property (nonatomic) NSInteger rating;
+@property (nonatomic) CGFloat avergeRating;
 @property (nonatomic, retain) NSDate* hours;
-@property (nonatomic) NSInteger* distance;
+@property (nonatomic) NSInteger distance;
 
-@property (nonatomic) NSInteger* rank;
+@property (nonatomic) NSInteger rank;
+
+-(UIColor*)colorForRating;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F1A6A301A86B7110098BC5E /* SFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A6A2F1A86B7110098BC5E /* SFNetworkingManager.m */; };
 		2F1A6A361A86C0C60098BC5E /* SFApiAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A6A351A86C0C60098BC5E /* SFApiAccess.m */; };
+		2F2A831B1AF966B3006AC8B9 /* SFPersonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A831A1AF966B3006AC8B9 /* SFPersonAnnotation.m */; };
 		2F7177FB1A86ACB600B1402C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FA1A86ACB600B1402C /* main.m */; };
 		2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FD1A86ACB600B1402C /* AppDelegate.m */; };
 		2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FF1A86ACB600B1402C /* CocoaBubble.xcdatamodeld */; };
@@ -25,11 +26,14 @@
 		2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7178361A86B2BD00B1402C /* SFMapViewController.m */; };
 		2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7178381A86B47F00B1402C /* SFMapViewController.xib */; };
 		2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */; };
+		6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */; };
 		61182106706F26F48B5D24CB /* coffee123.png in Resources */ = {isa = PBXBuildFile; fileRef = 6118266A3F275EDB09F17D47 /* coffee123.png */; };
+		611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 61182713FE48CE141E52EDB6 /* SFPerson.m */; };
 		611825724A053DD27FFCCD36 /* location44.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821218B690C8D275EB0E0 /* location44.png */; };
 		611826ED29B439CD2A676F53 /* navigation12.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182AE8C94DA9D3DDF72A54 /* navigation12.png */; };
 		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
 		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
+		61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */; };
 		61182E033090F681F2999C9A /* SFPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 611823B6BD68F43E1A1DF6DD /* SFPlace.m */; };
 		61182E03F35812166E90CB26 /* wifi5.png in Resources */ = {isa = PBXBuildFile; fileRef = 611826A52E2E80DD0D0451C3 /* wifi5.png */; };
 		61182EA0D07C85E071888C40 /* refresh62.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182CEE1391AF67B6DC436A /* refresh62.png */; };
@@ -53,6 +57,8 @@
 		2F1A6A2F1A86B7110098BC5E /* SFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNetworkingManager.m; sourceTree = "<group>"; };
 		2F1A6A341A86C0C60098BC5E /* SFApiAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFApiAccess.h; sourceTree = "<group>"; };
 		2F1A6A351A86C0C60098BC5E /* SFApiAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFApiAccess.m; sourceTree = "<group>"; };
+		2F2A83191AF966B3006AC8B9 /* SFPersonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPersonAnnotation.h; sourceTree = "<group>"; };
+		2F2A831A1AF966B3006AC8B9 /* SFPersonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPersonAnnotation.m; sourceTree = "<group>"; };
 		2F7177F51A86ACB600B1402C /* CocoaBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7177F91A86ACB600B1402C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F7177FA1A86ACB600B1402C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 		2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKThoughtBubbleView.m; sourceTree = "<group>"; };
 		41B3A9BD3DB443C2EC36FD4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceAnnotation.m; sourceTree = "<group>"; };
 		611821218B690C8D275EB0E0 /* location44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location44.png; sourceTree = "<group>"; };
 		611821EAF2B3FB6047D246EB /* cup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup3.png; sourceTree = "<group>"; };
 		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
@@ -87,8 +94,13 @@
 		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
 		6118266A3F275EDB09F17D47 /* coffee123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee123.png; sourceTree = "<group>"; };
 		611826A52E2E80DD0D0451C3 /* wifi5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi5.png; sourceTree = "<group>"; };
+		611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceDetailOverlay.m; sourceTree = "<group>"; };
+		61182713FE48CE141E52EDB6 /* SFPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPerson.m; sourceTree = "<group>"; };
 		6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFLandingViewController.xib; sourceTree = "<group>"; };
+		61182ACDD3B27C90889BD6FA /* SFPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPerson.h; sourceTree = "<group>"; };
 		61182AE8C94DA9D3DDF72A54 /* navigation12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation12.png; sourceTree = "<group>"; };
+		61182BAE6C0AB6CAE55E12B5 /* SFPlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPlaceAnnotation.h; sourceTree = "<group>"; };
+		61182CADD9C9FB200979E420 /* SFPlaceDetailOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPlaceDetailOverlay.h; sourceTree = "<group>"; };
 		61182CEE1391AF67B6DC436A /* refresh62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh62.png; sourceTree = "<group>"; };
 		61182E4EC9CA35FA4A02D351 /* target53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target53.png; sourceTree = "<group>"; };
 		E2D0B6A050D9DD901CDA0E57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +151,19 @@
 				2F1A6A2F1A86B7110098BC5E /* SFNetworkingManager.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		2F2A83181AF96671006AC8B9 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				2F2A83191AF966B3006AC8B9 /* SFPersonAnnotation.h */,
+				2F2A831A1AF966B3006AC8B9 /* SFPersonAnnotation.m */,
+				61182BAE6C0AB6CAE55E12B5 /* SFPlaceAnnotation.h */,
+				6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */,
+				611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */,
+				61182CADD9C9FB200979E420 /* SFPlaceDetailOverlay.h */,
+			);
+			name = Overlay;
 			sourceTree = "<group>";
 		};
 		2F7177EC1A86ACB600B1402C = {
@@ -227,6 +252,8 @@
 			children = (
 				2F7178301A86B09E00B1402C /* SFPlace.h */,
 				611823B6BD68F43E1A1DF6DD /* SFPlace.m */,
+				61182713FE48CE141E52EDB6 /* SFPerson.m */,
+				61182ACDD3B27C90889BD6FA /* SFPerson.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -246,6 +273,7 @@
 		2F71782D1A86B02200B1402C /* MapController */ = {
 			isa = PBXGroup;
 			children = (
+				2F2A83181AF96671006AC8B9 /* Overlay */,
 				2F7178351A86B2BD00B1402C /* SFMapViewController.h */,
 				2F7178361A86B2BD00B1402C /* SFMapViewController.m */,
 				2F7178381A86B47F00B1402C /* SFMapViewController.xib */,
@@ -468,11 +496,15 @@
 				2F7178071A86ACB600B1402C /* DetailViewController.m in Sources */,
 				2F7178041A86ACB600B1402C /* MasterViewController.m in Sources */,
 				2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */,
+				2F2A831B1AF966B3006AC8B9 /* SFPersonAnnotation.m in Sources */,
 				2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */,
 				2F7177FB1A86ACB600B1402C /* main.m in Sources */,
 				2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */,
 				611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */,
 				61182E033090F681F2999C9A /* SFPlace.m in Sources */,
+				611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */,
+				61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */,
+				6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

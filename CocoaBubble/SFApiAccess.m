@@ -67,6 +67,8 @@ int configuredRadiusInMeters = 1500;
 
                 SFPlace *place = [[SFPlace alloc] initWithTitle:title AndCoordinate:coordinate2D];
 
+                place.rating = rand() % 6;// because I need something here
+
                 [ret addObject:place];
             }
 
