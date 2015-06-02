@@ -16,11 +16,21 @@ typedef NS_ENUM(NSInteger, SFPersonType) {
     SFPersonTypeUndisclosed
 };
 
+typedef NS_ENUM(NSInteger, SFPersonMood) {
+    SFPersonMoodHappy,
+    SFPersonMoodSad,
+    SFPersonMoodExcited,
+    SFPersonMoodAdventurist,
+    SFPersonMoodChatty,
+    SFPersonMoodChilling
+};
+
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic) SFPersonType personType;
-@property BOOL seekingHelp;
-@property BOOL offeringHelp;
-@property BOOL wantsToHangingOut;
+@property (nonatomic) BOOL seekingHelp;
+@property (nonatomic) BOOL offeringHelp;
+@property (nonatomic) BOOL wantsToHangingOut;
+@property (nonatomic) SFPersonMood mood;
 
 -(UIColor*)colorForPersonType;
 +(UIColor*)colorForPersonType:(SFPersonType)type;

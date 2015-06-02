@@ -10,6 +10,17 @@
 		2F1A6A301A86B7110098BC5E /* SFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A6A2F1A86B7110098BC5E /* SFNetworkingManager.m */; };
 		2F1A6A361A86C0C60098BC5E /* SFApiAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A6A351A86C0C60098BC5E /* SFApiAccess.m */; };
 		2F2A831B1AF966B3006AC8B9 /* SFPersonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A831A1AF966B3006AC8B9 /* SFPersonAnnotation.m */; };
+		2F36FA471B1E6DCA00B2D015 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA461B1E6DCA00B2D015 /* CFNetwork.framework */; };
+		2F36FA491B1E6DD200B2D015 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA481B1E6DD200B2D015 /* SystemConfiguration.framework */; };
+		2F36FA4B1B1E6DD900B2D015 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4A1B1E6DD900B2D015 /* Security.framework */; };
+		2F36FA4D1B1E6DE300B2D015 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */; };
+		2F36FA4F1B1E6DED00B2D015 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */; };
+		2F36FA511B1E761D00B2D015 /* chatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA501B1E761D00B2D015 /* chatbubble.png */; };
+		2F36FA551B1E778800B2D015 /* SFThoughtAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA541B1E778800B2D015 /* SFThoughtAnnotation.m */; };
+		2F36FA581B1E77C200B2D015 /* SFThought.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA571B1E77C200B2D015 /* SFThought.m */; };
+		2F36FA5C1B1E786B00B2D015 /* SFLocalAreaLobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA5A1B1E786B00B2D015 /* SFLocalAreaLobby.m */; };
+		2F36FA5D1B1E786B00B2D015 /* SFLocalAreaLobby.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */; };
+		2F36FA601B1E796400B2D015 /* SFWebOfThingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */; };
 		2F7177FB1A86ACB600B1402C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FA1A86ACB600B1402C /* main.m */; };
 		2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FD1A86ACB600B1402C /* AppDelegate.m */; };
 		2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FF1A86ACB600B1402C /* CocoaBubble.xcdatamodeld */; };
@@ -59,6 +70,21 @@
 		2F1A6A351A86C0C60098BC5E /* SFApiAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFApiAccess.m; sourceTree = "<group>"; };
 		2F2A83191AF966B3006AC8B9 /* SFPersonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPersonAnnotation.h; sourceTree = "<group>"; };
 		2F2A831A1AF966B3006AC8B9 /* SFPersonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPersonAnnotation.m; sourceTree = "<group>"; };
+		2F36FA461B1E6DCA00B2D015 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2F36FA481B1E6DD200B2D015 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2F36FA4A1B1E6DD900B2D015 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		2F36FA501B1E761D00B2D015 /* chatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatbubble.png; sourceTree = "<group>"; };
+		2F36FA531B1E778800B2D015 /* SFThoughtAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFThoughtAnnotation.h; sourceTree = "<group>"; };
+		2F36FA541B1E778800B2D015 /* SFThoughtAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFThoughtAnnotation.m; sourceTree = "<group>"; };
+		2F36FA561B1E77C200B2D015 /* SFThought.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFThought.h; sourceTree = "<group>"; };
+		2F36FA571B1E77C200B2D015 /* SFThought.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFThought.m; sourceTree = "<group>"; };
+		2F36FA591B1E786B00B2D015 /* SFLocalAreaLobby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLocalAreaLobby.h; sourceTree = "<group>"; };
+		2F36FA5A1B1E786B00B2D015 /* SFLocalAreaLobby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLocalAreaLobby.m; sourceTree = "<group>"; };
+		2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLocalAreaLobby.xib; sourceTree = "<group>"; };
+		2F36FA5E1B1E796400B2D015 /* SFWebOfThingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWebOfThingsView.h; sourceTree = "<group>"; };
+		2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWebOfThingsView.m; sourceTree = "<group>"; };
 		2F7177F51A86ACB600B1402C /* CocoaBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7177F91A86ACB600B1402C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F7177FA1A86ACB600B1402C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +137,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F36FA4F1B1E6DED00B2D015 /* libicucore.dylib in Frameworks */,
+				2F36FA4D1B1E6DE300B2D015 /* libc++.dylib in Frameworks */,
+				2F36FA4B1B1E6DD900B2D015 /* Security.framework in Frameworks */,
+				2F36FA491B1E6DD200B2D015 /* SystemConfiguration.framework in Frameworks */,
+				2F36FA471B1E6DCA00B2D015 /* CFNetwork.framework in Frameworks */,
 				2F7178291A86AD4800B1402C /* CoreData.framework in Frameworks */,
 				2F7178271A86AD4000B1402C /* CoreFoundation.framework in Frameworks */,
 				2F7178251A86AD3700B1402C /* MapKit.framework in Frameworks */,
@@ -162,8 +193,22 @@
 				6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */,
 				611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */,
 				61182CADD9C9FB200979E420 /* SFPlaceDetailOverlay.h */,
+				2F36FA531B1E778800B2D015 /* SFThoughtAnnotation.h */,
+				2F36FA541B1E778800B2D015 /* SFThoughtAnnotation.m */,
 			);
 			name = Overlay;
+			sourceTree = "<group>";
+		};
+		2F36FA521B1E774500B2D015 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				2F36FA591B1E786B00B2D015 /* SFLocalAreaLobby.h */,
+				2F36FA5A1B1E786B00B2D015 /* SFLocalAreaLobby.m */,
+				2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */,
+				2F36FA5E1B1E796400B2D015 /* SFWebOfThingsView.h */,
+				2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */,
+			);
+			name = Communication;
 			sourceTree = "<group>";
 		};
 		2F7177EC1A86ACB600B1402C = {
@@ -254,6 +299,8 @@
 				611823B6BD68F43E1A1DF6DD /* SFPlace.m */,
 				61182713FE48CE141E52EDB6 /* SFPerson.m */,
 				61182ACDD3B27C90889BD6FA /* SFPerson.h */,
+				2F36FA561B1E77C200B2D015 /* SFThought.h */,
+				2F36FA571B1E77C200B2D015 /* SFThought.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +308,7 @@
 		2F71782C1A86B01900B1402C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA521B1E774500B2D015 /* Communication */,
 				2F71783A1A86B4D000B1402C /* ThoughtBubbleController */,
 				2F71782F1A86B03300B1402C /* SettingsController */,
 				2F71782E1A86B02C00B1402C /* MapDetailController */,
@@ -307,6 +355,11 @@
 		4201CF1A78F975A2E4F95E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */,
+				2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */,
+				2F36FA4A1B1E6DD900B2D015 /* Security.framework */,
+				2F36FA481B1E6DD200B2D015 /* SystemConfiguration.framework */,
+				2F36FA461B1E6DCA00B2D015 /* CFNetwork.framework */,
 				420DB044EE4D7EF5276540EE /* libPods.a */,
 			);
 			name = Frameworks;
@@ -325,6 +378,7 @@
 		61182E0490CBD14C1DD00EF0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA501B1E761D00B2D015 /* chatbubble.png */,
 				611821218B690C8D275EB0E0 /* location44.png */,
 				611826A52E2E80DD0D0451C3 /* wifi5.png */,
 				61182AE8C94DA9D3DDF72A54 /* navigation12.png */,
@@ -430,10 +484,12 @@
 				2F71780A1A86ACB600B1402C /* Main.storyboard in Resources */,
 				2F71780F1A86ACB600B1402C /* LaunchScreen.xib in Resources */,
 				2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */,
+				2F36FA511B1E761D00B2D015 /* chatbubble.png in Resources */,
 				2F71780C1A86ACB600B1402C /* Images.xcassets in Resources */,
 				611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */,
 				611825724A053DD27FFCCD36 /* location44.png in Resources */,
 				61182E03F35812166E90CB26 /* wifi5.png in Resources */,
+				2F36FA5D1B1E786B00B2D015 /* SFLocalAreaLobby.xib in Resources */,
 				611826ED29B439CD2A676F53 /* navigation12.png in Resources */,
 				61182106706F26F48B5D24CB /* coffee123.png in Resources */,
 				61182EA0D07C85E071888C40 /* refresh62.png in Resources */,
@@ -502,8 +558,12 @@
 				2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */,
 				611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */,
 				61182E033090F681F2999C9A /* SFPlace.m in Sources */,
+				2F36FA551B1E778800B2D015 /* SFThoughtAnnotation.m in Sources */,
 				611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */,
 				61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */,
+				2F36FA5C1B1E786B00B2D015 /* SFLocalAreaLobby.m in Sources */,
+				2F36FA581B1E77C200B2D015 /* SFThought.m in Sources */,
+				2F36FA601B1E796400B2D015 /* SFWebOfThingsView.m in Sources */,
 				6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

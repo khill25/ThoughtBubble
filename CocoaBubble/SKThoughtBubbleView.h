@@ -11,4 +11,6 @@
 
 @interface SKThoughtBubbleView : UIView
 
+-(void)setupBubbleWithPlace:(SFPlace*)place;
+
 @end
