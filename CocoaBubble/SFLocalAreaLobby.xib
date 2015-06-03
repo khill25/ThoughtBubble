@@ -17,12 +17,19 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
         <view contentMode="scaleToFill" id="GtC-5K-qTp">
-            <rect key="frame" x="0.0" y="1" width="301" height="316"/>
+            <rect key="frame" x="0.0" y="-1" width="252" height="469"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="79B-av-G4S">
+                    <rect key="frame" x="0.0" y="0.0" width="252" height="469"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="696.5" y="580"/>
+            <point key="canvasLocation" x="672" y="503.5"/>
         </view>
     </objects>
 </document>

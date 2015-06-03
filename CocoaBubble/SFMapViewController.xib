@@ -6,7 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFMapViewController">
             <connections>
+                <outlet property="createButton" destination="2XA-OZ-zcT" id="JCt-7E-cle"/>
+                <outlet property="exploreButton" destination="w2P-bc-YjC" id="Tsm-JW-QpT"/>
+                <outlet property="interactButton" destination="Ds9-gg-17P" id="wdf-Id-gQQ"/>
                 <outlet property="mapView" destination="bIX-RJ-B2B" id="Jji-Dr-Cd8"/>
+                <outlet property="navMenuView" destination="3B0-HH-o67" id="4NV-bo-1aF"/>
+                <outlet property="thinkButton" destination="4VD-JQ-d60" id="zRu-9c-jTW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JZD-ae-9x0"/>
             </connections>
         </placeholder>
@@ -35,48 +40,84 @@
             <point key="canvasLocation" x="305" y="159"/>
         </view>
         <view contentMode="scaleToFill" id="3B0-HH-o67">
-            <rect key="frame" x="0.0" y="0.0" width="124" height="224"/>
+            <rect key="frame" x="0.0" y="-5" width="124" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VD-JQ-d60">
-                    <rect key="frame" x="8" y="8" width="102" height="25"/>
+                <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VD-JQ-d60">
+                    <rect key="frame" x="8" y="20" width="102" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="1IQ-Ku-BhL"/>
+                        <constraint firstAttribute="height" constant="40" id="NIS-sa-tdO"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <state key="normal" title="Think">
                         <color key="titleColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="thinkTapped:" destination="-1" eventType="touchUpInside" id="QP9-8k-IvV"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2P-bc-YjC">
-                    <rect key="frame" x="8" y="41" width="96" height="40"/>
+                <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2P-bc-YjC">
+                    <rect key="frame" x="8" y="68" width="102" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="VIP-nE-5B7"/>
+                        <constraint firstAttribute="width" constant="102" id="aiE-AX-gOe"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <state key="normal" title="Explore">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XA-OZ-zcT">
-                    <rect key="frame" x="8" y="89" width="84" height="40"/>
+                <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XA-OZ-zcT">
+                    <rect key="frame" x="8" y="116" width="102" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="mSK-T3-oyu"/>
+                        <constraint firstAttribute="height" constant="40" id="yip-GH-zPw"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <state key="normal" title="Create">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-gg-17P">
-                    <rect key="frame" x="8" y="137" width="84" height="40"/>
+                <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-gg-17P">
+                    <rect key="frame" x="8" y="164" width="102" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5T0-fh-T3e"/>
+                        <constraint firstAttribute="width" constant="102" id="Xb1-Vz-jt3"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <state key="normal" title="Interact">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="interactTapped:" destination="-1" eventType="touchUpInside" id="BHk-Vk-mwh"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="2XA-OZ-zcT" secondAttribute="centerX" constant="3" id="2GN-8n-eP5"/>
+                <constraint firstItem="w2P-bc-YjC" firstAttribute="top" secondItem="4VD-JQ-d60" secondAttribute="bottom" constant="8" id="6Qy-4e-VEG"/>
+                <constraint firstAttribute="centerX" secondItem="4VD-JQ-d60" secondAttribute="centerX" constant="3" id="Afm-oz-wuM"/>
+                <constraint firstItem="Ds9-gg-17P" firstAttribute="top" secondItem="2XA-OZ-zcT" secondAttribute="bottom" constant="8" id="D7a-1o-WDb"/>
+                <constraint firstItem="2XA-OZ-zcT" firstAttribute="top" secondItem="w2P-bc-YjC" secondAttribute="bottom" constant="8" id="HNc-RJ-JMs"/>
+                <constraint firstAttribute="centerX" secondItem="w2P-bc-YjC" secondAttribute="centerX" constant="3" id="byf-Ha-hzs"/>
+                <constraint firstAttribute="bottom" secondItem="Ds9-gg-17P" secondAttribute="bottom" constant="20" id="f8I-wd-7g3"/>
+                <constraint firstAttribute="centerX" secondItem="Ds9-gg-17P" secondAttribute="centerX" constant="3" id="fsh-z3-cbw"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="30" y="54"/>
+            <point key="canvasLocation" x="30" y="27"/>
         </view>
     </objects>
 </document>

@@ -1,25 +1,22 @@
 //
-//  SFLandingViewController.m
+//  SFCommunicationViewController.m
 //  CocoaBubble
 //
-//  Created by Kaili Hill on 2/9/15.
+//  Created by Kaili Hill on 6/3/15.
 //  Copyright (c) 2015 Kaili Hill. All rights reserved.
 //
 
-#import "SFLandingViewController.h"
-#import "SFMapViewController.h"
+#import "SFCommunicationViewController.h"
 
-@interface SFLandingViewController ()
+@interface SFCommunicationViewController ()
 
 @end
 
-@implementation SFLandingViewController
+@implementation SFCommunicationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

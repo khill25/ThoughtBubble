@@ -10,6 +10,6 @@
 
 @interface SFWebOfThingsView : UIView
 
--(void)addObject:(id)object from:(id)object distance:(CGFloat)distance;
+-(void)addObject:(id)object from:(id)from distance:(CGFloat)distance;
 
 @end

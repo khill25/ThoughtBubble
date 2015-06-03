@@ -10,9 +10,7 @@
 @class SFMapViewController;
 
 
-@interface SFLandingViewController : UIViewController <UITabBarControllerDelegate>
-
-@property (strong) UITabBarController *tabController;
+@interface SFLandingViewController : UIViewController
 @property (strong) SFMapViewController *mapViewController;
 
 @end

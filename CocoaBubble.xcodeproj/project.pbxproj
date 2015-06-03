@@ -15,12 +15,22 @@
 		2F36FA4B1B1E6DD900B2D015 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4A1B1E6DD900B2D015 /* Security.framework */; };
 		2F36FA4D1B1E6DE300B2D015 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */; };
 		2F36FA4F1B1E6DED00B2D015 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */; };
-		2F36FA511B1E761D00B2D015 /* chatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA501B1E761D00B2D015 /* chatbubble.png */; };
 		2F36FA551B1E778800B2D015 /* SFThoughtAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA541B1E778800B2D015 /* SFThoughtAnnotation.m */; };
 		2F36FA581B1E77C200B2D015 /* SFThought.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA571B1E77C200B2D015 /* SFThought.m */; };
 		2F36FA5C1B1E786B00B2D015 /* SFLocalAreaLobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA5A1B1E786B00B2D015 /* SFLocalAreaLobby.m */; };
 		2F36FA5D1B1E786B00B2D015 /* SFLocalAreaLobby.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */; };
 		2F36FA601B1E796400B2D015 /* SFWebOfThingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */; };
+		2F36FA691B1F98EC00B2D015 /* SFCommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA671B1F98EC00B2D015 /* SFCommunicationViewController.m */; };
+		2F36FA6A1B1F98EC00B2D015 /* SFCommunicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA681B1F98EC00B2D015 /* SFCommunicationViewController.xib */; };
+		2F36FA771B1F998A00B2D015 /* SFMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA6D1B1F998A00B2D015 /* SFMessage.m */; };
+		2F36FA781B1F998A00B2D015 /* SFMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA6F1B1F998A00B2D015 /* SFMessageTableViewCell.m */; };
+		2F36FA791B1F998A00B2D015 /* SFMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA701B1F998A00B2D015 /* SFMessageTableViewCell.xib */; };
+		2F36FA7A1B1F998A00B2D015 /* SFMessageThreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA721B1F998A00B2D015 /* SFMessageThreadsViewController.m */; };
+		2F36FA7B1B1F998A00B2D015 /* SFMessageThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA731B1F998A00B2D015 /* SFMessageThreadsViewController.xib */; };
+		2F36FA7C1B1F998A00B2D015 /* SFMessageThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA751B1F998A00B2D015 /* SFMessageThreadViewController.m */; };
+		2F36FA7D1B1F998A00B2D015 /* SFMessageThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA761B1F998A00B2D015 /* SFMessageThreadViewController.xib */; };
+		2F36FA811B1F99DE00B2D015 /* SFSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA801B1F99DE00B2D015 /* SFSettings.m */; };
+		2F36FA831B1F9A9C00B2D015 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F36FA821B1F9A9C00B2D015 /* UIKit.framework */; };
 		2F7177FB1A86ACB600B1402C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FA1A86ACB600B1402C /* main.m */; };
 		2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FD1A86ACB600B1402C /* AppDelegate.m */; };
 		2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FF1A86ACB600B1402C /* CocoaBubble.xcdatamodeld */; };
@@ -38,18 +48,11 @@
 		2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7178381A86B47F00B1402C /* SFMapViewController.xib */; };
 		2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */; };
 		6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */; };
-		61182106706F26F48B5D24CB /* coffee123.png in Resources */ = {isa = PBXBuildFile; fileRef = 6118266A3F275EDB09F17D47 /* coffee123.png */; };
 		611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 61182713FE48CE141E52EDB6 /* SFPerson.m */; };
-		611825724A053DD27FFCCD36 /* location44.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821218B690C8D275EB0E0 /* location44.png */; };
-		611826ED29B439CD2A676F53 /* navigation12.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182AE8C94DA9D3DDF72A54 /* navigation12.png */; };
 		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
 		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
 		61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */; };
 		61182E033090F681F2999C9A /* SFPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 611823B6BD68F43E1A1DF6DD /* SFPlace.m */; };
-		61182E03F35812166E90CB26 /* wifi5.png in Resources */ = {isa = PBXBuildFile; fileRef = 611826A52E2E80DD0D0451C3 /* wifi5.png */; };
-		61182EA0D07C85E071888C40 /* refresh62.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182CEE1391AF67B6DC436A /* refresh62.png */; };
-		61182EB5DE4EB6AA0914352D /* cup3.png in Resources */ = {isa = PBXBuildFile; fileRef = 611821EAF2B3FB6047D246EB /* cup3.png */; };
-		61182FB5CB20E2A22CA47133 /* target53.png in Resources */ = {isa = PBXBuildFile; fileRef = 61182E4EC9CA35FA4A02D351 /* target53.png */; };
 		C04B013362530CC133CCCB51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420DB044EE4D7EF5276540EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +78,6 @@
 		2F36FA4A1B1E6DD900B2D015 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		2F36FA501B1E761D00B2D015 /* chatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatbubble.png; sourceTree = "<group>"; };
 		2F36FA531B1E778800B2D015 /* SFThoughtAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFThoughtAnnotation.h; sourceTree = "<group>"; };
 		2F36FA541B1E778800B2D015 /* SFThoughtAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFThoughtAnnotation.m; sourceTree = "<group>"; };
 		2F36FA561B1E77C200B2D015 /* SFThought.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFThought.h; sourceTree = "<group>"; };
@@ -85,6 +87,23 @@
 		2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLocalAreaLobby.xib; sourceTree = "<group>"; };
 		2F36FA5E1B1E796400B2D015 /* SFWebOfThingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWebOfThingsView.h; sourceTree = "<group>"; };
 		2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWebOfThingsView.m; sourceTree = "<group>"; };
+		2F36FA661B1F98EC00B2D015 /* SFCommunicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCommunicationViewController.h; sourceTree = "<group>"; };
+		2F36FA671B1F98EC00B2D015 /* SFCommunicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCommunicationViewController.m; sourceTree = "<group>"; };
+		2F36FA681B1F98EC00B2D015 /* SFCommunicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFCommunicationViewController.xib; sourceTree = "<group>"; };
+		2F36FA6C1B1F998A00B2D015 /* SFMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMessage.h; sourceTree = "<group>"; };
+		2F36FA6D1B1F998A00B2D015 /* SFMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMessage.m; sourceTree = "<group>"; };
+		2F36FA6E1B1F998A00B2D015 /* SFMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMessageTableViewCell.h; sourceTree = "<group>"; };
+		2F36FA6F1B1F998A00B2D015 /* SFMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMessageTableViewCell.m; sourceTree = "<group>"; };
+		2F36FA701B1F998A00B2D015 /* SFMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFMessageTableViewCell.xib; sourceTree = "<group>"; };
+		2F36FA711B1F998A00B2D015 /* SFMessageThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMessageThreadsViewController.h; sourceTree = "<group>"; };
+		2F36FA721B1F998A00B2D015 /* SFMessageThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMessageThreadsViewController.m; sourceTree = "<group>"; };
+		2F36FA731B1F998A00B2D015 /* SFMessageThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFMessageThreadsViewController.xib; sourceTree = "<group>"; };
+		2F36FA741B1F998A00B2D015 /* SFMessageThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMessageThreadViewController.h; sourceTree = "<group>"; };
+		2F36FA751B1F998A00B2D015 /* SFMessageThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMessageThreadViewController.m; sourceTree = "<group>"; };
+		2F36FA761B1F998A00B2D015 /* SFMessageThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFMessageThreadViewController.xib; sourceTree = "<group>"; };
+		2F36FA7F1B1F99DE00B2D015 /* SFSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSettings.h; sourceTree = "<group>"; };
+		2F36FA801B1F99DE00B2D015 /* SFSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFSettings.m; sourceTree = "<group>"; };
+		2F36FA821B1F9A9C00B2D015 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2F7177F51A86ACB600B1402C /* CocoaBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7177F91A86ACB600B1402C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F7177FA1A86ACB600B1402C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,22 +132,15 @@
 		41B3A9BD3DB443C2EC36FD4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceAnnotation.m; sourceTree = "<group>"; };
-		611821218B690C8D275EB0E0 /* location44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location44.png; sourceTree = "<group>"; };
-		611821EAF2B3FB6047D246EB /* cup3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup3.png; sourceTree = "<group>"; };
 		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
 		611823B6BD68F43E1A1DF6DD /* SFPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlace.m; sourceTree = "<group>"; };
 		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
-		6118266A3F275EDB09F17D47 /* coffee123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee123.png; sourceTree = "<group>"; };
-		611826A52E2E80DD0D0451C3 /* wifi5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi5.png; sourceTree = "<group>"; };
 		611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceDetailOverlay.m; sourceTree = "<group>"; };
 		61182713FE48CE141E52EDB6 /* SFPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPerson.m; sourceTree = "<group>"; };
 		6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFLandingViewController.xib; sourceTree = "<group>"; };
 		61182ACDD3B27C90889BD6FA /* SFPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPerson.h; sourceTree = "<group>"; };
-		61182AE8C94DA9D3DDF72A54 /* navigation12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation12.png; sourceTree = "<group>"; };
 		61182BAE6C0AB6CAE55E12B5 /* SFPlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPlaceAnnotation.h; sourceTree = "<group>"; };
 		61182CADD9C9FB200979E420 /* SFPlaceDetailOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPlaceDetailOverlay.h; sourceTree = "<group>"; };
-		61182CEE1391AF67B6DC436A /* refresh62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh62.png; sourceTree = "<group>"; };
-		61182E4EC9CA35FA4A02D351 /* target53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target53.png; sourceTree = "<group>"; };
 		E2D0B6A050D9DD901CDA0E57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F36FA831B1F9A9C00B2D015 /* UIKit.framework in Frameworks */,
 				2F36FA4F1B1E6DED00B2D015 /* libicucore.dylib in Frameworks */,
 				2F36FA4D1B1E6DE300B2D015 /* libc++.dylib in Frameworks */,
 				2F36FA4B1B1E6DD900B2D015 /* Security.framework in Frameworks */,
@@ -202,13 +215,44 @@
 		2F36FA521B1E774500B2D015 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA6B1B1F996F00B2D015 /* ChatViewControllers */,
 				2F36FA591B1E786B00B2D015 /* SFLocalAreaLobby.h */,
 				2F36FA5A1B1E786B00B2D015 /* SFLocalAreaLobby.m */,
 				2F36FA5B1B1E786B00B2D015 /* SFLocalAreaLobby.xib */,
 				2F36FA5E1B1E796400B2D015 /* SFWebOfThingsView.h */,
 				2F36FA5F1B1E796400B2D015 /* SFWebOfThingsView.m */,
+				2F36FA661B1F98EC00B2D015 /* SFCommunicationViewController.h */,
+				2F36FA671B1F98EC00B2D015 /* SFCommunicationViewController.m */,
+				2F36FA681B1F98EC00B2D015 /* SFCommunicationViewController.xib */,
 			);
 			name = Communication;
+			sourceTree = "<group>";
+		};
+		2F36FA6B1B1F996F00B2D015 /* ChatViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F36FA6C1B1F998A00B2D015 /* SFMessage.h */,
+				2F36FA6D1B1F998A00B2D015 /* SFMessage.m */,
+				2F36FA6E1B1F998A00B2D015 /* SFMessageTableViewCell.h */,
+				2F36FA6F1B1F998A00B2D015 /* SFMessageTableViewCell.m */,
+				2F36FA701B1F998A00B2D015 /* SFMessageTableViewCell.xib */,
+				2F36FA711B1F998A00B2D015 /* SFMessageThreadsViewController.h */,
+				2F36FA721B1F998A00B2D015 /* SFMessageThreadsViewController.m */,
+				2F36FA731B1F998A00B2D015 /* SFMessageThreadsViewController.xib */,
+				2F36FA741B1F998A00B2D015 /* SFMessageThreadViewController.h */,
+				2F36FA751B1F998A00B2D015 /* SFMessageThreadViewController.m */,
+				2F36FA761B1F998A00B2D015 /* SFMessageThreadViewController.xib */,
+			);
+			name = ChatViewControllers;
+			sourceTree = "<group>";
+		};
+		2F36FA7E1B1F99CA00B2D015 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2F36FA7F1B1F99DE00B2D015 /* SFSettings.h */,
+				2F36FA801B1F99DE00B2D015 /* SFSettings.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		2F7177EC1A86ACB600B1402C = {
@@ -237,6 +281,7 @@
 		2F7177F71A86ACB600B1402C /* CocoaBubble */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA7E1B1F99CA00B2D015 /* Settings */,
 				2F1A6A2D1A86B6FC0098BC5E /* Networking */,
 				2F71782C1A86B01900B1402C /* ViewControllers */,
 				2F71782A1A86B00B00B1402C /* Data */,
@@ -355,6 +400,7 @@
 		4201CF1A78F975A2E4F95E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA821B1F9A9C00B2D015 /* UIKit.framework */,
 				2F36FA4E1B1E6DED00B2D015 /* libicucore.dylib */,
 				2F36FA4C1B1E6DE200B2D015 /* libc++.dylib */,
 				2F36FA4A1B1E6DD900B2D015 /* Security.framework */,
@@ -378,14 +424,6 @@
 		61182E0490CBD14C1DD00EF0 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				2F36FA501B1E761D00B2D015 /* chatbubble.png */,
-				611821218B690C8D275EB0E0 /* location44.png */,
-				611826A52E2E80DD0D0451C3 /* wifi5.png */,
-				61182AE8C94DA9D3DDF72A54 /* navigation12.png */,
-				6118266A3F275EDB09F17D47 /* coffee123.png */,
-				61182CEE1391AF67B6DC436A /* refresh62.png */,
-				611821EAF2B3FB6047D246EB /* cup3.png */,
-				61182E4EC9CA35FA4A02D351 /* target53.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -484,17 +522,13 @@
 				2F71780A1A86ACB600B1402C /* Main.storyboard in Resources */,
 				2F71780F1A86ACB600B1402C /* LaunchScreen.xib in Resources */,
 				2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */,
-				2F36FA511B1E761D00B2D015 /* chatbubble.png in Resources */,
+				2F36FA7D1B1F998A00B2D015 /* SFMessageThreadViewController.xib in Resources */,
+				2F36FA7B1B1F998A00B2D015 /* SFMessageThreadsViewController.xib in Resources */,
 				2F71780C1A86ACB600B1402C /* Images.xcassets in Resources */,
+				2F36FA6A1B1F98EC00B2D015 /* SFCommunicationViewController.xib in Resources */,
 				611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */,
-				611825724A053DD27FFCCD36 /* location44.png in Resources */,
-				61182E03F35812166E90CB26 /* wifi5.png in Resources */,
 				2F36FA5D1B1E786B00B2D015 /* SFLocalAreaLobby.xib in Resources */,
-				611826ED29B439CD2A676F53 /* navigation12.png in Resources */,
-				61182106706F26F48B5D24CB /* coffee123.png in Resources */,
-				61182EA0D07C85E071888C40 /* refresh62.png in Resources */,
-				61182EB5DE4EB6AA0914352D /* cup3.png in Resources */,
-				61182FB5CB20E2A22CA47133 /* target53.png in Resources */,
+				2F36FA791B1F998A00B2D015 /* SFMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,15 +579,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F36FA781B1F998A00B2D015 /* SFMessageTableViewCell.m in Sources */,
 				2F1A6A301A86B7110098BC5E /* SFNetworkingManager.m in Sources */,
 				2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */,
 				2F7178311A86B09E00B1402C /* SFPlace.h in Sources */,
+				2F36FA7C1B1F998A00B2D015 /* SFMessageThreadViewController.m in Sources */,
 				2F1A6A361A86C0C60098BC5E /* SFApiAccess.m in Sources */,
 				2F7178071A86ACB600B1402C /* DetailViewController.m in Sources */,
 				2F7178041A86ACB600B1402C /* MasterViewController.m in Sources */,
 				2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */,
+				2F36FA811B1F99DE00B2D015 /* SFSettings.m in Sources */,
 				2F2A831B1AF966B3006AC8B9 /* SFPersonAnnotation.m in Sources */,
 				2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */,
+				2F36FA691B1F98EC00B2D015 /* SFCommunicationViewController.m in Sources */,
 				2F7177FB1A86ACB600B1402C /* main.m in Sources */,
 				2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */,
 				611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */,
@@ -561,6 +599,8 @@
 				2F36FA551B1E778800B2D015 /* SFThoughtAnnotation.m in Sources */,
 				611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */,
 				61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */,
+				2F36FA7A1B1F998A00B2D015 /* SFMessageThreadsViewController.m in Sources */,
+				2F36FA771B1F998A00B2D015 /* SFMessage.m in Sources */,
 				2F36FA5C1B1E786B00B2D015 /* SFLocalAreaLobby.m in Sources */,
 				2F36FA581B1E77C200B2D015 /* SFThought.m in Sources */,
 				2F36FA601B1E796400B2D015 /* SFWebOfThingsView.m in Sources */,

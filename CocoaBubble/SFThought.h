@@ -20,4 +20,6 @@
 @property (nonatomic) NSString* thoughtText;
 @property (nonatomic) NSData* thoughtData;
 
+-(UIColor*)colorForThought;
+
 @end

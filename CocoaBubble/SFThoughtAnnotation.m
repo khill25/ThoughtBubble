@@ -7,6 +7,17 @@
 //
 
 #import "SFThoughtAnnotation.h"
+#import "SFThought.h"
+#import "SFSettings.h"
+
+@interface SFThoughtAnnotation()
+
+@property (nonatomic) UILabel* textLabel;
+@property (assign, nonatomic) CGFloat labelOffset;
+
+@property (weak, nonatomic) SFThought* thought;
+
+@end
 
 @implementation SFThoughtAnnotation
 
@@ -29,50 +40,47 @@
 -(void)updateAnnotationViewForAnnotation:(id<MKAnnotation>)annotation {
     
     self.annotation = annotation;
-    self.person = (SFPerson*)annotation;
+    self.thought = (SFThought*)annotation;
     
     // Update the label and the graphic
     // based on type and availability
     
-    self.image = [self personAnnotationImageWithColor:[self.person colorForPersonType]];
+    //self.image = [self personAnnotationImageWithColor:[self.thought colorForThought]];
+
+    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,200, 100)];
+    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13.0f];
+    self.textLabel.textColor = [UIColor sf_primaryColor];
+    self.textLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    self.textLabel.numberOfLines = 3;
+    self.textLabel.text = self.thought.thoughtText;
+    self.image = [self thoughtAnnotationImageWithColor:[UIColor whiteColor]];
     
 }
 
-- (UIImage *)personAnnotationImageWithColor:(UIColor *)color {
-    
-    CGFloat lineWidth = 0.0f;
-    CGFloat shadowBlurRadius = 1.5f;
-    CGSize shadowOffset = CGSizeMake(0.0f, 0.5f); // 2.0f);
-    
-    CGFloat clusterDiameter = 28.0;
-    clusterDiameter = clusterDiameter + lineWidth;
-    
-    CGFloat clusterDiameterWithShadow = clusterDiameter + (shadowBlurRadius * 2);
-    
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(clusterDiameterWithShadow, clusterDiameterWithShadow), NO, [[UIScreen mainScreen] scale]);
-    
-    CGRect rectForClusterBorder = CGRectMake(lineWidth + shadowBlurRadius, lineWidth + shadowBlurRadius, clusterDiameter - lineWidth * 2, clusterDiameter - lineWidth * 2);
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:rectForClusterBorder];
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
-    
-    CGContextSetShadowWithColor(context, shadowOffset, shadowBlurRadius, [[UIColor colorWithWhite:0.0f alpha:0.1f] CGColor]);
-    
-    
-    path.lineWidth = lineWidth;
-    
-    [[UIColor whiteColor] setStroke];
-    [path stroke];
-    
-    CGContextRestoreGState(context);
-    
+- (UIImage *)thoughtAnnotationImageWithColor:(UIColor *)color {
+
+    CGRect sizeRect = [self.textLabel.text boundingRectWithSize:CGSizeMake(200,1000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.textLabel.font} context:nil];
+    CGFloat height = sizeRect.size.height + 16;
+
+    CGRect pathRect = sizeRect;
+    pathRect.size.height += 16;
+    pathRect.size.width +=16;
+
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:pathRect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4,4)];
+    path.lineWidth = 1.75f;
+
+    sizeRect.origin.x = 8.0f;
+    sizeRect.origin.y = 8.0f;
+
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(216, height+16), NO, [[UIScreen mainScreen] scale]);
+
     [color setFill];
     [path fill];
-    
-    UIBezierPath *innerCirclePath = [UIBezierPath bezierPathWithOvalInRect:rectForClusterBorder];
-    [[UIColor colorWithWhite:0.0f alpha:1.0f] set];
-    [innerCirclePath strokeWithBlendMode:kCGBlendModeMultiply alpha:0.1f];
+
+    [[UIColor sf_secondaryColor] setStroke];
+    [path stroke];
+
+    [self.textLabel.text drawInRect:sizeRect withAttributes:@{NSFontAttributeName : self.textLabel.font, NSForegroundColorAttributeName : self.textLabel.textColor}];
     
     return UIGraphicsGetImageFromCurrentImageContext();
 }

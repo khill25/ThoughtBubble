@@ -12,6 +12,8 @@
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
+@property (strong) SFMapViewController *mapViewController;
+
 @end
 
 @implementation AppDelegate
@@ -31,9 +33,11 @@
      */
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
-    SFLandingViewController *viewController = [[SFLandingViewController alloc] init];
+    self.mapViewController = [[SFMapViewController alloc] initWithNibName:@"SFMapViewController" bundle:nil];
+    // Wrap up the map into navigaton controller
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:_mapViewController];
 
-    self.window.rootViewController = viewController;
+    self.window.rootViewController = controller;
     [self.window makeKeyAndVisible];
     
     return YES;

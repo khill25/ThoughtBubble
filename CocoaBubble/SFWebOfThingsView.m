@@ -8,14 +8,18 @@
 
 #import "SFWebOfThingsView.h"
 
+@interface SFWebOfThingsView()
+
+@property (nonatomic) NSMutableArray* nodes;
+@property (nonatomic) NSMutableArray* edges;
+
+@end
+
 @implementation SFWebOfThingsView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+-(void)addObject:(id)object from:(id)from distance:(CGFloat)distance {
+    
 }
-*/
 
 @end

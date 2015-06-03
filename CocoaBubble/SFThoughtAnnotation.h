@@ -10,4 +10,6 @@
 
 @interface SFThoughtAnnotation : MKAnnotationView
 
+-(void)updateAnnotationViewForAnnotation:(id<MKAnnotation>)annotation;
+
 @end

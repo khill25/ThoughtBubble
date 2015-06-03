@@ -13,14 +13,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-oB-HdL">
                     <rect key="frame" x="103" y="286" width="168" height="96"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup3.png" translatesAutoresizingMaskIntoConstraints="NO" id="K8F-hW-tqv">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup3" translatesAutoresizingMaskIntoConstraints="NO" id="K8F-hW-tqv">
                             <rect key="frame" x="72" y="0.0" width="96" height="96"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="96" id="bdm-ow-NGf"/>
                                 <constraint firstAttribute="height" constant="96" id="rWI-rh-TRd"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee123.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-WP-x0D">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee123" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-WP-x0D">
                             <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="96" id="BeO-G9-FWW"/>
@@ -42,7 +42,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.27447716129512417" green="0.29094807621047425" blue="0.28244805288881758" alpha="0.38" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="gQn-oB-HdL" secondAttribute="centerY" id="N4d-cT-8Ko"/>
                 <constraint firstAttribute="centerX" secondItem="gQn-oB-HdL" secondAttribute="centerX" id="Q9r-1w-G8G"/>
@@ -53,7 +53,7 @@
         </view>
     </objects>
     <resources>
-        <image name="coffee123.png" width="256" height="256"/>
-        <image name="cup3.png" width="256" height="256"/>
+        <image name="coffee123" width="256" height="256"/>
+        <image name="cup3" width="256" height="256"/>
     </resources>
 </document>

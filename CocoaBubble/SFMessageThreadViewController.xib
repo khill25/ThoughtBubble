@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFMessageThreadViewController">
+            <connections>
+                <outlet property="composeTextField" destination="MCc-KN-kDf" id="1wp-he-497"/>
+                <outlet property="sendButton" destination="wuj-44-Ukv" id="vAV-VI-aZS"/>
+                <outlet property="sendMessageContainer" destination="Hw9-D4-6B9" id="Mkd-Eh-DRW"/>
+                <outlet property="sendMessageContainerHeightConstant" destination="AtK-6E-07d" id="TQ1-S3-RQK"/>
+                <outlet property="tableView" destination="wtx-gy-359" id="h7e-fz-zv8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wtx-gy-359">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="610"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="JVC-l8-Kar"/>
+                        <outlet property="delegate" destination="-1" id="ret-70-tkU"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw9-D4-6B9">
+                    <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuj-44-Ukv">
+                            <rect key="frame" x="325" y="5" width="42" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="DdV-ph-Fao"/>
+                                <constraint firstAttribute="width" constant="42" id="rfN-70-3ZP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Send">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="7sP-q2-eWt"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCc-KN-kDf">
+                            <rect key="frame" x="8" y="8" width="309" height="33"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="mrb-kf-cya"/>
+                            </connections>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90301452020202011" green="0.90301452020202011" blue="0.90301452020202011" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="MCc-KN-kDf" firstAttribute="top" secondItem="Hw9-D4-6B9" secondAttribute="top" constant="8" id="2Ve-D0-CZp"/>
+                        <constraint firstAttribute="height" constant="49" id="AtK-6E-07d"/>
+                        <constraint firstItem="MCc-KN-kDf" firstAttribute="leading" secondItem="Hw9-D4-6B9" secondAttribute="leading" constant="8" id="Fzl-SX-wVs"/>
+                        <constraint firstAttribute="bottom" secondItem="wuj-44-Ukv" secondAttribute="bottom" constant="9" id="NXj-jP-1A8"/>
+                        <constraint firstAttribute="trailing" secondItem="wuj-44-Ukv" secondAttribute="trailing" constant="8" id="Z6Z-tk-qN0"/>
+                        <constraint firstItem="wuj-44-Ukv" firstAttribute="leading" secondItem="MCc-KN-kDf" secondAttribute="trailing" constant="8" id="aTw-XE-DNP"/>
+                        <constraint firstAttribute="bottom" secondItem="MCc-KN-kDf" secondAttribute="bottom" constant="8" id="mlS-z2-leR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hw9-D4-6B9" firstAttribute="top" secondItem="wtx-gy-359" secondAttribute="bottom" constant="8" id="35b-iO-2UO"/>
+                <constraint firstItem="wtx-gy-359" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="72z-g3-HlG"/>
+                <constraint firstAttribute="trailing" secondItem="wtx-gy-359" secondAttribute="trailing" id="CJx-JJ-qNY"/>
+                <constraint firstAttribute="trailing" secondItem="Hw9-D4-6B9" secondAttribute="trailing" id="LDh-7B-qtc"/>
+                <constraint firstAttribute="bottom" secondItem="Hw9-D4-6B9" secondAttribute="bottom" id="Rdv-VD-jCy"/>
+                <constraint firstItem="wtx-gy-359" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r9c-xc-HTa"/>
+                <constraint firstItem="Hw9-D4-6B9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="szl-PS-6bP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="274.5" y="404.5"/>
+        </view>
+    </objects>
+</document>
