@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bIX-RJ-B2B">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="jd6-7N-tMk"/>
                     </connections>
@@ -30,7 +30,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="bIX-RJ-B2B" secondAttribute="bottom" constant="-99" id="aEc-CK-sLS"/>
+                <constraint firstAttribute="bottom" secondItem="bIX-RJ-B2B" secondAttribute="bottom" id="aEc-CK-sLS"/>
                 <constraint firstItem="bIX-RJ-B2B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cdk-65-XJZ"/>
                 <constraint firstAttribute="trailing" secondItem="bIX-RJ-B2B" secondAttribute="trailing" id="sYS-3u-VTl"/>
                 <constraint firstItem="bIX-RJ-B2B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uv2-Rp-D7k"/>

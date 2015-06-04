@@ -35,7 +35,7 @@
 
     // most recent at bottom
     // scroll bottom
-    self.tableView.contentOffset = CGPointMake(0, 44.0f);
+    [self.tableView setContentInset:UIEdgeInsetsMake(64.0f, 0, 0, 0)];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
