@@ -1,4 +1,5 @@
 #import "SFPlace.h"
+#import "SFPerson.h"
 
 @interface SFPlace ()
 

@@ -16,6 +16,8 @@
 #import "SFMessageThreadsViewController.h"
 #import "SFThought.h"
 #import "SFThoughtAnnotation.h"
+#import "SFCommunicationViewController.h"
+#import "SFUtilities.h"
 
 @interface SFMapViewController () <UIGestureRecognizerDelegate>
 
@@ -29,6 +31,15 @@
 @property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
 @property (weak, nonatomic) id<MKAnnotation> selectedAnnotation;
+
+@property (nonatomic) SFCommunicationViewController* thoughtController;
+@property (nonatomic) SFMessageThreadsViewController* messageThreadsController;
+
+@property (nonatomic) BOOL messagesHidden;
+@property (nonatomic) NSLayoutConstraint* messageThreadsHeight;
+@property (nonatomic) NSLayoutConstraint* messageThreadsTop;
+
+@property (nonatomic) BOOL setUserLocation;
 
 @end
 
@@ -44,6 +55,7 @@ BOOL hasUpdated = NO;
     [super viewDidLoad];
     // Do view setup here.
 
+    self.setUserLocation = YES;
     self.title = kControllerTitle;
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -82,12 +94,14 @@ BOOL hasUpdated = NO;
     [self.createButton setContentEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
     [self.interactButton setContentEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 -(void)refresh:(id)sender {
 
     hasUpdated = false;
-    //[self.locationManager startUpdatingLocation];
     [self showPlacesWithCoordinate:self.mapView.centerCoordinate];
 
 }
@@ -95,13 +109,12 @@ BOOL hasUpdated = NO;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
 
     if (!hasUpdated) {
-        __weak SFMapViewController* weakSelf = self;
-        dispatch_after(5000, dispatch_get_main_queue(), ^{
-            [weakSelf showPlaces:[locations lastObject]];
-            hasUpdated = YES;
-            [weakSelf.locationManager stopUpdatingLocation];
-        });
+        hasUpdated = YES;
+        NSLog(@"LocationManager didUpdateLocations");
+        [self showPlaces:[locations lastObject]];
+        [self.locationManager stopUpdatingLocation];
     }
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -136,24 +149,26 @@ BOOL hasUpdated = NO;
 - (void)mapView:(MKMapView *)mapView
         didUpdateUserLocation:
                 (MKUserLocation *)userLocation {
-    _mapView.centerCoordinate = userLocation.location.coordinate;
+
+    if (self.setUserLocation) {
+        _mapView.centerCoordinate = userLocation.location.coordinate;
+        self.setUserLocation = NO;
+    }
 }
 
 -(void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
 
     if (self.navMenuView.alpha >= .999f) {
-        self.navMenuView.alpha = .989f;
         [UIView animateWithDuration:.45f delay:.0f usingSpringWithDamping:.8f initialSpringVelocity:.0f options:0 animations:^{
-            self.navMenuView.alpha = .45f;
+            self.navMenuView.alpha = .35f;
         } completion:nil];
     }
 
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    //[self showPlacesWithCoordinate:mapView.centerCoordinate];
 
-    if (self.navMenuView.alpha <= .999f) {
+    if (self.navMenuView.alpha < 1.0f) {
         [UIView animateWithDuration:.45f delay:.0f usingSpringWithDamping:.8f initialSpringVelocity:.0f options:0 animations:^{
             self.navMenuView.alpha = 1.0f;
         } completion:nil];
@@ -161,7 +176,12 @@ BOOL hasUpdated = NO;
 }
 
 -(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+
     for (MKAnnotationView *cluster in views) {
+
+        if ([cluster isKindOfClass:[SFThoughtAnnotation class]]) {
+            cluster.layer.zPosition = 10.0f;
+        }
 
         CGAffineTransform finalScale = CGAffineTransformIdentity;
         cluster.transform = CGAffineTransformMakeScale(.01, .01);
@@ -183,6 +203,9 @@ BOOL hasUpdated = NO;
 
         // Filter the ones we want to actually animate
         for (id<MKAnnotation> annotation in annotations) {
+
+            if ([annotation isKindOfClass:[MKUserLocation class]]) continue;
+
             if ([visibleAnnotations containsObject:annotation]) {
                 // Go ahead and add the view in directly
                 MKAnnotationView *view = [mapView viewForAnnotation:annotation];
@@ -246,24 +269,29 @@ BOOL hasUpdated = NO;
 
     UIView *hitTestView = [self.mapView hitTest:[sender locationInView:self.mapView] withEvent:nil];
 
+    if ([hitTestView isKindOfClass:[SFPlaceAnnotation class]]) {
+        UIView* otherView = [hitTestView extendedHitTest:[sender locationInView:self.mapView] withEvent:nil];
+
+        hitTestView = otherView;
+    }
+
     if ([hitTestView isKindOfClass:[SFThoughtAnnotation class]]) {
+        NSLog(@"HitTest is SFThoughtAnnotation");
 
         SFThoughtAnnotation *clusterMapAnnotationView = (SFThoughtAnnotation *)hitTestView;
 
         if (self.selectedAnnotation == clusterMapAnnotationView.annotation) {
-            //[self deselectAnnotation:clusterMapAnnotationView.annotation];
+            [self deselectAnnotation:clusterMapAnnotationView.annotation];
         } else {
             if (self.selectedAnnotation) {
-                //[self deselectAnnotation:self.selectedAnnotation];
+                [self deselectAnnotation:self.selectedAnnotation];
             }
-            //[self selectAnnotationView:clusterMapAnnotationView];
+            [self selectAnnotationView:clusterMapAnnotationView];
         }
 
     } else if (self.selectedAnnotation) {
-        //[self deselectAnnotation:self.selectedAnnotation];
+        [self deselectAnnotation:self.selectedAnnotation];
     }
-
-    // Do stuff
 }
 
 -(void)showPlaces:(CLLocation *)currentLocation {
@@ -280,8 +308,6 @@ BOOL hasUpdated = NO;
                        }
 
                        if (locations) {
-
-                           [self mapView:self.mapView removeAnnotations:[self.mapView annotations] animated:YES];
 
                            // NSArray of SFPlaces
                            // Create dots on map
@@ -327,8 +353,8 @@ BOOL hasUpdated = NO;
                            newThought.thoughtText = @"I wonder what would happen if you divided a cat by a donut?";
                            [self.mapView addAnnotation:newThought];
 
-                           MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)];
-                           [self.mapView setRegion:adjustedRegion animated:YES];
+                           //MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)];
+                           //[self.mapView setRegion:adjustedRegion animated:YES];
                        }
 
                    }];
@@ -336,48 +362,192 @@ BOOL hasUpdated = NO;
 }
 
 -(IBAction)thinkTapped:(id)sender {
-    
+
+    if (!self.thoughtController) {
+
+        self.thoughtController = [[SFCommunicationViewController alloc] initWithNibName:@"SFCommunicationViewController" bundle:nil sendBlock:^(NSString* message){
+            // Send the thought
+            NSLog(@"Thought sent!");
+
+            self.thoughtController.textView.text = @"";
+            [self dismissComposeView:nil];
+            [self thinkTapped:self.thinkButton];
+
+
+        }];
+
+        CGRect thinkFrame = self.thoughtController.view.frame;
+        thinkFrame.origin.x = 0;
+        thinkFrame.origin.y = self.view.frame.size.height;
+        thinkFrame.size.width = self.view.frame.size.width;
+        thinkFrame.size.height = 92.0f;
+        self.thoughtController.view.frame = thinkFrame;
+
+        // TODO do the stupid auto layout to make sure that we can resize the text box if needed.
+
+        //[self.thoughtController willMoveToParentViewController:self];
+        [self.view addSubview:self.thoughtController.view];
+
+        NSArray* hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[think]-0-|" options:0 metrics:nil views:@{@"think" : self.thoughtController.view}];
+        NSArray* vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[think(==92)]-0-|" options:0 metrics:nil views:@{@"think" : self.thoughtController.view}];
+
+        [self.view addConstraints:hConstraints];
+        [self.view addConstraints:vConstraints];
+        //[self addChildViewController:self.thoughtController];
+        //[self.thoughtController didMoveToParentViewController:self];
+        [self.view layoutIfNeeded];
+
+        self.thoughtController.view.hidden = YES;
+    }
+
+    if (self.thoughtController.view.hidden) {
+
+        CGRect thinkFrame = self.thoughtController.view.frame;
+        thinkFrame.origin.x = 0;
+        thinkFrame.size.width = self.view.frame.size.width;
+        thinkFrame.size.height = 92.0f;
+        self.thoughtController.view.frame = thinkFrame;
+        self.thoughtController.view.hidden = NO;
+
+        thinkFrame.origin.y = self.view.frame.size.height - thinkFrame.size.height;
+
+        [UIView animateWithDuration:.35f delay:0 usingSpringWithDamping:.75f initialSpringVelocity:.5f options:0 animations:^{
+
+            self.thoughtController.view.frame = thinkFrame;
+
+        } completion:nil];
+
+    } else {
+
+        CGRect thinkFrame = self.thoughtController.view.frame;
+        thinkFrame.origin.x = 0;
+        thinkFrame.origin.y = self.view.frame.size.height + 92.0f;
+        thinkFrame.size.width = self.view.frame.size.width;
+        thinkFrame.size.height = 92.0f;
+
+        [UIView animateWithDuration:.35f delay:0 usingSpringWithDamping:.75f initialSpringVelocity:.5f options:0 animations:^{
+            self.thoughtController.view.frame = thinkFrame;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                self.thoughtController.view.hidden = YES;
+            }
+        }];
+
+    }
+
 }
 
 -(IBAction)interactTapped:(id)sender {
-    SFMessageThreadsViewController *controller = [[SFMessageThreadsViewController alloc] initWithNibName:@"SFMessageThreadsViewController" bundle:nil];
-    [self.navigationController pushViewController:controller animated:YES];
+
+    CGRect threadFrame = self.view.frame;
+    threadFrame.size.height = (self.view.frame.size.height - (64.0f + 45.0f + self.interactButton.frame.origin.y));
+    threadFrame.origin.y = self.view.frame.size.height;
+
+    if (!self.messageThreadsController) {
+
+        self.messageThreadsController = [[SFMessageThreadsViewController alloc] initWithNibName:@"SFMessageThreadsViewController" bundle:nil];
+        self.messageThreadsController.view.translatesAutoresizingMaskIntoConstraints = NO;
+        self.messageThreadsController.view.frame = threadFrame;
+
+        [self.view addSubview:self.messageThreadsController.view];
+        [self.messageThreadsController willMoveToParentViewController:self];
+        [self addChildViewController:self.messageThreadsController];
+        [self.messageThreadsController didMoveToParentViewController:self];
+
+        self.messageThreadsHeight = [NSLayoutConstraint constraintWithItem:self.messageThreadsController.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:(self.view.frame.size.height - (64.0f + 45.0f + self.interactButton.frame.origin.y))];
+        NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.messageThreadsController.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0.0f];
+        NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.messageThreadsController.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:0.0f];
+        NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.messageThreadsController.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f];
+        self.messageThreadsTop = [NSLayoutConstraint constraintWithItem:self.messageThreadsController.view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:self.view.frame.size.height];
+        [self.view addConstraint:self.messageThreadsHeight];
+        [self.view addConstraint:left];
+        [self.view addConstraint:right];
+        [self.view addConstraint:bottom];
+        [self.view addConstraint:self.messageThreadsTop];
+
+        [self.view layoutIfNeeded];
+
+        self.messagesHidden = YES;
+    }
+
+    if (self.messagesHidden) {
+        self.messagesHidden = NO;
+
+        self.messageThreadsTop.constant = 64 + self.interactButton.frame.origin.y + 45;
+        //self.messageThreadsHeight.constant = self.view.frame.size.height - 64 - self.interactButton.frame.origin.y - 45;
+                [UIView animateWithDuration:.35f delay:0 usingSpringWithDamping:.75f initialSpringVelocity:.5f options:0 animations:^{
+                    [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+
+        }];
+    } else {
+        self.messagesHidden = YES;
+        self.messageThreadsTop.constant = self.view.frame.size.height;
+        //self.messageThreadsHeight.constant = 0;
+        [UIView animateWithDuration:.35f delay:0 usingSpringWithDamping:.75f initialSpringVelocity:.5f options:0 animations:^{
+                    [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            if (finished) {
+
+            }
+        }];
+    }
+
+    //[self.navigationController pushViewController:controller animated:YES];
 }
 
-//- (void)deselectAnnotation:(id <MKAnnotation>)annotation {
-//    LVYClusterMapAnnotationView *annotationView = (LVYClusterMapAnnotationView *)[self.mapView viewForAnnotation:annotation];
-//    annotationView.enabled = NO;
-//    [annotationView updateClusterAnnotationViewForAnnotation:self.selectedAnnotation];
-//    self.selectedAnnotation = nil;
-//}
-//
-//- (void)selectAnnotationView:(LVYClusterMapAnnotationView *)view {
-//    self.selectedAnnotation = view.annotation;
-//    view.enabled = YES;
-//
-//    LVYCluster *cluster = (LVYCluster *)view.annotation;
-//
-//    if (cluster.type == LVYClusterTypeChild) {
-//        LVYClusterMapAnnotationView *clusterMapAnnotationView = view;
-//
-//        dispatch_block_t selectAnnotation = ^{
-//            [clusterMapAnnotationView setAnnotationImageForChildCluster:cluster toSelected:YES];
-//            [self.delegate mapViewController:self didSelectAnnotationObject:view.annotation];
-//        };
-//
-//        if ([self.delegate respondsToSelector:@selector(mapViewController:canSelectAnnotationObject:)]) {
-//            if ([self.delegate mapViewController:self canSelectAnnotationObject:view.annotation] == YES) {
-//                selectAnnotation();
-//            }
-//        } else {
-//            selectAnnotation();
-//        }
-//
-//    } else if (cluster.type == LVYClusterTypeParent) {
-//        [self didSelectParentCluster:cluster];
-//    } else if (cluster.type == LVYClusterTypeCity) {
-//        [self didSelectCityCluster:cluster];
-//    }
-//}
+- (void)deselectAnnotation:(id <MKAnnotation>)annotation {
+    /*
+    LVYClusterMapAnnotationView *annotationView = (LVYClusterMapAnnotationView *)[self.mapView viewForAnnotation:annotation];
+    annotationView.enabled = NO;
+    [annotationView updateClusterAnnotationViewForAnnotation:self.selectedAnnotation];
+    */
+    self.selectedAnnotation = nil;
+}
+
+- (void)selectAnnotationView:(SFThoughtAnnotation*)view {
+    self.selectedAnnotation = view.annotation;
+    view.enabled = YES;
+
+    SFThought *thought = (SFThought*)view.annotation;
+    NSLog(@"Selected thought: %@", thought.thoughtText);
+
+    // TODO do something with this. Maybe view the person that sent it?
+
+}
+
+#pragma mark - Keyboard showing and hiding
+
+- (void)keyboardWillShow:(NSNotification *)note {
+    NSDictionary *userInfo = note.userInfo;
+    NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+
+    CGRect keyboardFrameEnd = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardFrameEnd = [self.view convertRect:keyboardFrameEnd fromView:nil];
+
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | curve animations:^{
+        self.view.frame = CGRectMake(0, 0, keyboardFrameEnd.size.width, keyboardFrameEnd.origin.y);
+    } completion:nil];
+}
+
+- (void)keyboardWillHide:(NSNotification *)note {
+    NSDictionary *userInfo = note.userInfo;
+    NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+
+    CGRect keyboardFrameEnd = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardFrameEnd = [self.view convertRect:keyboardFrameEnd fromView:nil];
+
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | curve animations:^{
+        self.view.frame = CGRectMake(0, 0, keyboardFrameEnd.size.width, keyboardFrameEnd.origin.y);
+    } completion:nil];
+}
+
+-(void)dismissComposeView:(UITapGestureRecognizer *)recognizer {
+
+    [self.thoughtController.textView resignFirstResponder];
+
+}
 
 @end

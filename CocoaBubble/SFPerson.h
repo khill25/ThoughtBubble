@@ -32,6 +32,13 @@ typedef NS_ENUM(NSInteger, SFPersonMood) {
 @property (nonatomic) BOOL wantsToHangingOut;
 @property (nonatomic) SFPersonMood mood;
 
+@property (nonatomic) NSString* bio;
+@property (nonatomic) NSString* email;
+@property (nonatomic) NSString* name;
+@property (nonatomic) NSString* alias;
+@property (nonatomic) BOOL usingRealName;
+@property (nonatomic) BOOL isMe;
+
 -(UIColor*)colorForPersonType;
 +(UIColor*)colorForPersonType:(SFPersonType)type;
 

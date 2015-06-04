@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+@class SFPerson;
+
 @interface SFPlace : NSObject <MKAnnotation>
 
 @property (nonatomic,copy) NSString *title;
@@ -21,8 +23,10 @@
 @property (nonatomic) CGFloat avergeRating;
 @property (nonatomic, retain) NSDate* hours;
 @property (nonatomic) NSInteger distance;
-
 @property (nonatomic) NSInteger rank;
+
+@property (nonatomic) BOOL wasSuggested;
+@property (nonatomic) SFPerson* suggestedBy;
 
 -(UIColor*)colorForRating;
 

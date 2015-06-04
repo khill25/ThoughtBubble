@@ -10,4 +10,9 @@
 
 @interface SFCommunicationViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+-(id)initWithNibName:(NSString*)nibName bundle:(NSBundle *)nibBundleOrNil sendBlock:(void(^)(NSString* message))sentMessageTapped;
+
 @end

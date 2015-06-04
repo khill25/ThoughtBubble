@@ -19,9 +19,17 @@
             <rect key="frame" x="0.0" y="64" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-ny-bdd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JSJ-wc-r8Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wtx-gy-359">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="610"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="JVC-l8-Kar"/>
                         <outlet property="delegate" destination="-1" id="ret-70-tkU"/>
@@ -66,15 +74,19 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Hw9-D4-6B9" firstAttribute="top" secondItem="wtx-gy-359" secondAttribute="bottom" constant="8" id="35b-iO-2UO"/>
+                <constraint firstItem="HMe-ny-bdd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4vk-il-rI8"/>
                 <constraint firstItem="wtx-gy-359" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="72z-g3-HlG"/>
                 <constraint firstAttribute="trailing" secondItem="wtx-gy-359" secondAttribute="trailing" id="CJx-JJ-qNY"/>
                 <constraint firstAttribute="trailing" secondItem="Hw9-D4-6B9" secondAttribute="trailing" id="LDh-7B-qtc"/>
+                <constraint firstItem="HMe-ny-bdd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RY2-4W-eTG"/>
                 <constraint firstAttribute="bottom" secondItem="Hw9-D4-6B9" secondAttribute="bottom" id="Rdv-VD-jCy"/>
+                <constraint firstAttribute="bottom" secondItem="HMe-ny-bdd" secondAttribute="bottom" id="fm8-Zy-UDC"/>
                 <constraint firstItem="wtx-gy-359" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r9c-xc-HTa"/>
                 <constraint firstItem="Hw9-D4-6B9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="szl-PS-6bP"/>
+                <constraint firstAttribute="trailing" secondItem="HMe-ny-bdd" secondAttribute="trailing" id="uHa-2M-Oaw"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="274.5" y="404.5"/>
