@@ -16,7 +16,10 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 -(id) initWithTitle:(NSString *) title AndCoordinate:(CLLocationCoordinate2D)coordinate;
 
+@property (nonatomic) NSDate* sentTime;
+@property (nonatomic) NSInteger score;
 @property (weak, nonatomic) SFPerson* owner;
+@property (nonatomic) BOOL isMine;
 @property (nonatomic) NSString* thoughtText;
 @property (nonatomic) NSData* thoughtData;
 

@@ -50,12 +50,12 @@
 
     NSInteger totalLength = textView.text.length + range.length;
 
-    if (totalLength > 140) {
+    if (totalLength > self.MAX_MESSAGE_LENGTH-1) {
         return NO;
     }
 
-    self.totalCharactersLabel.text = [NSString stringWithFormat:@"%d / %d", totalLength, self.MAX_MESSAGE_LENGTH];
-    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%d left", self.MAX_MESSAGE_LENGTH - totalLength];
+    self.totalCharactersLabel.text = [NSString stringWithFormat:@"%d / %d", totalLength+1, self.MAX_MESSAGE_LENGTH];
+    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%d left", self.MAX_MESSAGE_LENGTH - (totalLength + 1)];
 
     return YES;
 }

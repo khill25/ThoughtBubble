@@ -4,7 +4,7 @@
 //
 
 #import "SFMessage.h"
-
+#import "SFNetworkingManager.h"
 
 @implementation SFMessage {
 
@@ -20,6 +20,17 @@
 
     return self;
 
+}
+
+-(id)initWithJSON:(NSDictionary*)json {
+
+    if (self = [super init]) {
+        self.message = json[kMessageKey];
+        self.sent = [NSDate dateWithTimeIntervalSince1970:[json[kTimestapKey] doubleValue]];
+        self.isMe = [json[kUserIdKey] isEqualToString:[SFNetworkingManager instance].currentUserId];
+    }
+
+    return self;
 }
 
 @end

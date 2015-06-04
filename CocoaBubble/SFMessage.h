@@ -14,5 +14,6 @@
 @property (nonatomic) BOOL isMe;
 
 -(id)initWithMessage:(NSString*)message sent:(NSDate*)sent isMine:(BOOL)isMine;
+-(id)initWithJSON:(NSDictionary*)json;
 
 @end

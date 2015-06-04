@@ -23,6 +23,7 @@
 
 @property NSMutableArray* visibleAnnotation;
 
+@property (nonatomic) CLLocationCoordinate2D currentLocation;
 @property (strong, nonatomic) IBOutlet UIView *navMenuView;
 @property (weak, nonatomic) IBOutlet UIButton *thinkButton;
 @property (weak, nonatomic) IBOutlet UIButton *exploreButton;
@@ -71,6 +72,7 @@ BOOL hasUpdated = NO;
 
     // Should probably zoom in too because there is no reason to be staring at the entire country
     CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(37.7833,-122.4167); // start in SF!!!
+    self.currentLocation = startCoord;
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, .05, .05)];
     [self.mapView setRegion:adjustedRegion animated:YES];
 
@@ -107,6 +109,10 @@ BOOL hasUpdated = NO;
 }
 // Location Manager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+
+    if (locations.count > 0) {
+        self.currentLocation = ((CLLocation *) [locations lastObject]).coordinate;
+    }
 
     if (!hasUpdated) {
         hasUpdated = YES;
@@ -179,8 +185,12 @@ BOOL hasUpdated = NO;
 
     for (MKAnnotationView *cluster in views) {
 
+        BOOL useExtraAnimation = NO;
+
         if ([cluster isKindOfClass:[SFThoughtAnnotation class]]) {
             cluster.layer.zPosition = 10.0f;
+
+            useExtraAnimation = ((SFThought*)cluster.annotation).isMine;
         }
 
         CGAffineTransform finalScale = CGAffineTransformIdentity;
@@ -188,7 +198,21 @@ BOOL hasUpdated = NO;
 
         [UIView animateWithDuration:0.3f delay:(1.0f/(rand()%25)) usingSpringWithDamping:.8f initialSpringVelocity:1.0f options:0 animations:^() {
             cluster.transform = finalScale;
-        }                           completion:nil];
+        } completion:^(BOOL finished) {
+
+            if (finished) {
+                if (useExtraAnimation) {
+                    CGAffineTransform finalScale2 = CGAffineTransformMakeTranslation(0.0f, -200.0f);
+
+                    [UIView animateWithDuration:4.5f delay:2.5f usingSpringWithDamping:.8f initialSpringVelocity:1.0f options:0 animations:^() {
+                        cluster.transform = finalScale2;
+                        cluster.alpha = 0;
+                    } completion:nil];
+                }
+            }
+
+        }];
+
     }
 }
 
@@ -368,6 +392,13 @@ BOOL hasUpdated = NO;
         self.thoughtController = [[SFCommunicationViewController alloc] initWithNibName:@"SFCommunicationViewController" bundle:nil sendBlock:^(NSString* message){
             // Send the thought
             NSLog(@"Thought sent!");
+
+            SFThought* newThought = [[SFThought alloc] initWithTitle:@"newThought" AndCoordinate:self.currentLocation];
+            newThought.isMine = YES;
+            newThought.thoughtText = message;
+            newThought.sentTime = [NSDate new];
+
+            [self.mapView addAnnotation:newThought];
 
             self.thoughtController.textView.text = @"";
             [self dismissComposeView:nil];

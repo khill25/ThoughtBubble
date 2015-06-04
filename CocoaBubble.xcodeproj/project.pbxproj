@@ -51,6 +51,7 @@
 		6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */; };
 		611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 61182713FE48CE141E52EDB6 /* SFPerson.m */; };
 		611827ECE0A17B0CA50B96D3 /* SFLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */; };
+		611828B6AE73CF49F45FB318 /* SFNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 611822CA4536BBA386CDE568 /* SFNode.m */; };
 		611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */; };
 		61182D84E67BDE701EB242D8 /* SFPlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */; };
 		61182E033090F681F2999C9A /* SFPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 611823B6BD68F43E1A1DF6DD /* SFPlace.m */; };
@@ -134,11 +135,13 @@
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceAnnotation.m; sourceTree = "<group>"; };
 		6118225E1044A82D0A7948C0 /* SFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUtilities.m; sourceTree = "<group>"; };
+		611822CA4536BBA386CDE568 /* SFNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNode.m; sourceTree = "<group>"; };
 		611822F84DFD00992E412325 /* SFLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLandingViewController.h; sourceTree = "<group>"; };
 		611823B6BD68F43E1A1DF6DD /* SFPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlace.m; sourceTree = "<group>"; };
 		611824611EC74D2FF6D4B7A6 /* SFLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLandingViewController.m; sourceTree = "<group>"; };
 		611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceDetailOverlay.m; sourceTree = "<group>"; };
 		61182713FE48CE141E52EDB6 /* SFPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPerson.m; sourceTree = "<group>"; };
+		611827C0F858EE636C77E211 /* SFNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNode.h; sourceTree = "<group>"; };
 		6118288568DF44EEE82E65C1 /* SFLandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFLandingViewController.xib; sourceTree = "<group>"; };
 		611829C5C3DF750FE7D751AD /* SFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUtilities.h; sourceTree = "<group>"; };
 		61182ACDD3B27C90889BD6FA /* SFPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPerson.h; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 				2F36FA661B1F98EC00B2D015 /* SFCommunicationViewController.h */,
 				2F36FA671B1F98EC00B2D015 /* SFCommunicationViewController.m */,
 				2F36FA681B1F98EC00B2D015 /* SFCommunicationViewController.xib */,
+				611822856A205618D10B2FE0 /* Graph */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -414,6 +418,15 @@
 				420DB044EE4D7EF5276540EE /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		611822856A205618D10B2FE0 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				611822CA4536BBA386CDE568 /* SFNode.m */,
+				611827C0F858EE636C77E211 /* SFNode.h */,
+			);
+			name = Graph;
 			sourceTree = "<group>";
 		};
 		61182D7D26CBA1A76408001E /* LandingController */ = {
@@ -611,6 +624,7 @@
 				2F36FA601B1E796400B2D015 /* SFWebOfThingsView.m in Sources */,
 				6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */,
 				611820389C30E3D3F49DED92 /* SFUtilities.m in Sources */,
+				611828B6AE73CF49F45FB318 /* SFNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

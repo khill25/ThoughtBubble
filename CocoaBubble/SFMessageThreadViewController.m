@@ -9,6 +9,7 @@
 #import "SFMessageThreadViewController.h"
 #import "SFMessage.h"
 #import "SFMessageTableViewCell.h"
+#import "SFNetworkingManager.h"
 
 @interface SFMessageThreadViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
 
@@ -22,6 +23,8 @@
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *sendMessageContainerHeightConstant;
 
+@property (nonatomic) Firebase* firebase;
+
 @end
 
 @implementation SFMessageThreadViewController
@@ -32,6 +35,7 @@
 
     // most recent at bottom
     // scroll bottom
+    self.tableView.contentOffset = CGPointMake(0, 44.0f);
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -46,6 +50,42 @@
     self.messages = [NSMutableArray new];
     [self.tableView registerNib:[UINib nibWithNibName:@"SFMessageTableViewCell" bundle:nil] forCellReuseIdentifier:@"LeftAlignCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SFMessageTableViewCell" bundle:nil] forCellReuseIdentifier:@"RightAlignCell"];
+
+    __block BOOL initialAdds = YES;
+    __block BOOL hadUpdate = NO;
+
+    self.firebase = [[SFNetworkingManager instance] getFirebaseRefForMessageThread:@"sarahexidhere"];
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        // Add the chat message to the array.
+
+        // Make a message from the snapshot value
+
+        if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
+            SFMessage *message = [[SFMessage alloc] initWithJSON:snapshot.value];
+            [self.messages addObject:message];
+
+            if (!initialAdds) {
+                [self.tableView beginUpdates];
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+                [self.tableView endUpdates];
+                NSIndexPath *ipath = [NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0];
+                [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            }
+
+        } else {
+            NSLog(@"Not dictionary value: %@", snapshot.value);
+        }
+
+    }];
+
+    [self.firebase observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+
+        if (initialAdds) {
+            [self.tableView reloadData];
+        }
+
+        initialAdds = NO;
+    }];
 
 }
 
@@ -155,6 +195,9 @@
 
     SFMessage * message = [[SFMessage alloc] initWithMessage:self.composeTextField.text sent:[NSDate new] isMine:YES];
 
+    [[SFNetworkingManager instance] sendMessage:message withFirebaseChatRef:self.firebase];
+
+    /*
     [self.messages addObject:message];
 
     //[self.tableView reloadData];
@@ -167,6 +210,7 @@
 
     NSIndexPath* ipath = [NSIndexPath indexPathForRow: self.messages.count-1 inSection:0];
     [self.tableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    */
 
     self.composeTextField.text = @"";
 

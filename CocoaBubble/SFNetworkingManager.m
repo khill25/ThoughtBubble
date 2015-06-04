@@ -8,13 +8,16 @@
 
 #import "SFNetworkingManager.h"
 #import "SFThought.h"
-#import <Firebase/Firebase.h>
+#import "SFMessage.h"
 
-NSString* chatServerAPI = @"https://flickering-heat-2355.firebaseio.com";
+NSString* chatServerAPI = @"https://flickering-heat-2355.firebaseio.com/users";
+const NSString* kMessageKey = @"message";
+const NSString* kUserIdKey = @"userId";
+const NSString* kTimestapKey = @"timestamp";
+const NSString* kDestinationKey = @"chatDestination";
+const NSString* kUserKey = @"users";
 
 @interface SFNetworkingManager()
-
-@property (nonatomic) Firebase* firebase;
 @property (nonatomic) NSString* loggedInUserId;
 
 @end
@@ -36,6 +39,7 @@ static SFNetworkingManager * _instance;
 -(id)init {
 
     if (self = [super init]) {
+        self.loggedInUserId = @"hashstringhere";
         [self setupFirebase];
         [self setupMessageListener];
     }
@@ -56,6 +60,11 @@ static SFNetworkingManager * _instance;
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
 
+}
+
+-(Firebase*)getFirebaseRefForMessageThread:(NSString*)messagesTo {
+    Firebase* userStore = [self.firebase childByAppendingPath:[NSString stringWithFormat:@"/%@/messageThreads/%@", [self currentUserId], messagesTo]];
+    return userStore;
 }
 
 +(void)postRequestWithUrl:(NSString*) url completionHandler:(void(^)(id reseponse, NSError* error))completionHandler {
@@ -103,14 +112,13 @@ static SFNetworkingManager * _instance;
 }
 
 
--(void)sendThought:(SFThought*)thought {
+-(void)sendMessage:(SFMessage*)toSend withFirebaseChatRef:(Firebase*)chatRef {
+    NSDictionary* message = @{kMessageKey : toSend.message, kTimestapKey : [NSNumber numberWithDouble:[toSend.sent timeIntervalSince1970]], kUserIdKey : [self currentUserId]};
+    [[chatRef childByAutoId] setValue:message];
+}
 
-
-
-    // Write data to Firebase
-    //[self.firebase setValue:thought.thoughtText];
-    [self.firebase setValue:@"Test!!! YAY it worked."];
-
+-(NSString*)currentUserId {
+    return self.loggedInUserId;
 }
 
 @end

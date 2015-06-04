@@ -41,7 +41,7 @@
     
     self.annotation = annotation;
     self.thought = (SFThought*)annotation;
-    
+
     // Update the label and the graphic
     // based on type and availability
     
