@@ -62,6 +62,10 @@
     CGRect sizeRect = [self.textLabel.text boundingRectWithSize:CGSizeMake(200,1000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.textLabel.font} context:nil];
     CGFloat height = sizeRect.size.height + 16;
 
+    if (sizeRect.size.width < 200) {
+        sizeRect.origin.x = (108.0f - sizeRect.size.width/2.0f) - 8.0f;
+    }
+
     CGRect pathRect = sizeRect;
     pathRect.size.height += 16;
     pathRect.size.width +=16;
@@ -69,7 +73,7 @@
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:pathRect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(4,4)];
     path.lineWidth = 1.75f;
 
-    sizeRect.origin.x = 8.0f;
+    sizeRect.origin.x += 8.0f;
     sizeRect.origin.y = 8.0f;
 
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(216, height+16), NO, [[UIScreen mainScreen] scale]);
