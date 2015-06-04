@@ -11,6 +11,7 @@
                 <outlet property="interactButton" destination="Ds9-gg-17P" id="wdf-Id-gQQ"/>
                 <outlet property="mapView" destination="bIX-RJ-B2B" id="Jji-Dr-Cd8"/>
                 <outlet property="navMenuView" destination="3B0-HH-o67" id="4NV-bo-1aF"/>
+                <outlet property="profileImage" destination="Eon-eg-l3W" id="5cD-TV-IKC"/>
                 <outlet property="thinkButton" destination="4VD-JQ-d60" id="zRu-9c-jTW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JZD-ae-9x0"/>
             </connections>
@@ -119,5 +120,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="30" y="27"/>
         </view>
+        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Eon-eg-l3W">
+            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="540" y="-55"/>
+        </imageView>
     </objects>
 </document>

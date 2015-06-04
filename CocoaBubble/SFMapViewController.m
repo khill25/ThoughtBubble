@@ -18,6 +18,7 @@
 #import "SFThoughtAnnotation.h"
 #import "SFCommunicationViewController.h"
 #import "SFUtilities.h"
+#import "SFProfileViewController.h"
 
 @interface SFMapViewController () <UIGestureRecognizerDelegate>
 
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *exploreButton;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *interactButton;
+@property (weak, nonatomic) IBOutlet UIImageView* profileImage;
 @property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
 @property (weak, nonatomic) id<MKAnnotation> selectedAnnotation;
@@ -99,6 +101,25 @@ BOOL hasUpdated = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
+
+    CGRect profileFrame = self.profileImage.frame;
+    profileFrame.size.height = 64;
+    profileFrame.size.width = 64;
+    profileFrame.origin.y = 64 + 10;
+    profileFrame.origin.x = self.view.frame.size.width - 20;
+
+    self.profileImage.clipsToBounds = YES;
+    self.profileImage.image = [UIImage imageNamed:@"sampleProfile.jpg"];
+    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profileImage.layer.masksToBounds = YES;
+    self.profileImage.layer.cornerRadius = 32;
+    self.profileImage.layer.borderWidth = 1.0f;
+
+    self.profileImage.frame = profileFrame;
+    [self.view addSubview:self.profileImage];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapped:)];
+    [self.profileImage addGestureRecognizer:tap];
 }
 
 -(void)refresh:(id)sender {
@@ -579,6 +600,11 @@ BOOL hasUpdated = NO;
 
     [self.thoughtController.textView resignFirstResponder];
 
+}
+
+-(void)profileTapped:(UITapGestureRecognizer *)tapGestureRecognizer {
+    SFProfileViewController *controller = [[SFProfileViewController alloc] initWithNibName:@"SFProfileViewController" bundle:nil];
+    [self.navigationController presentViewController:controller animated:YES completion:nil];
 }
 
 @end
