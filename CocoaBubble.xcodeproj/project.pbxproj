@@ -34,6 +34,8 @@
 		2F36FA881B210F8200B2D015 /* SFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA861B210F8200B2D015 /* SFProfileViewController.m */; };
 		2F36FA891B210F8200B2D015 /* SFProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA871B210F8200B2D015 /* SFProfileViewController.xib */; };
 		2F36FA8B1B21164400B2D015 /* sampleProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA8A1B21164400B2D015 /* sampleProfile.jpg */; };
+		2F36FA901B211F3E00B2D015 /* SFBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F36FA8E1B211F3E00B2D015 /* SFBannerViewController.m */; };
+		2F36FA911B211F3E00B2D015 /* SFBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F36FA8F1B211F3E00B2D015 /* SFBannerViewController.xib */; };
 		2F7177FB1A86ACB600B1402C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FA1A86ACB600B1402C /* main.m */; };
 		2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FD1A86ACB600B1402C /* AppDelegate.m */; };
 		2F7178011A86ACB600B1402C /* CocoaBubble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F7177FF1A86ACB600B1402C /* CocoaBubble.xcdatamodeld */; };
@@ -113,6 +115,9 @@
 		2F36FA861B210F8200B2D015 /* SFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFProfileViewController.m; sourceTree = "<group>"; };
 		2F36FA871B210F8200B2D015 /* SFProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFProfileViewController.xib; sourceTree = "<group>"; };
 		2F36FA8A1B21164400B2D015 /* sampleProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleProfile.jpg; sourceTree = "<group>"; };
+		2F36FA8D1B211F3E00B2D015 /* SFBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBannerViewController.h; sourceTree = "<group>"; };
+		2F36FA8E1B211F3E00B2D015 /* SFBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBannerViewController.m; sourceTree = "<group>"; };
+		2F36FA8F1B211F3E00B2D015 /* SFBannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFBannerViewController.xib; sourceTree = "<group>"; };
 		2F7177F51A86ACB600B1402C /* CocoaBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7177F91A86ACB600B1402C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F7177FA1A86ACB600B1402C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -279,6 +284,16 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		2F36FA8C1B211F2F00B2D015 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				2F36FA8D1B211F3E00B2D015 /* SFBannerViewController.h */,
+				2F36FA8E1B211F3E00B2D015 /* SFBannerViewController.m */,
+				2F36FA8F1B211F3E00B2D015 /* SFBannerViewController.xib */,
+			);
+			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
 		2F7177EC1A86ACB600B1402C = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +320,7 @@
 		2F7177F71A86ACB600B1402C /* CocoaBubble */ = {
 			isa = PBXGroup;
 			children = (
+				2F36FA8C1B211F2F00B2D015 /* Custom Controls */,
 				2F36FA7E1B1F99CA00B2D015 /* Settings */,
 				2F1A6A2D1A86B6FC0098BC5E /* Networking */,
 				2F71782C1A86B01900B1402C /* ViewControllers */,
@@ -564,6 +580,7 @@
 				2F36FA7B1B1F998A00B2D015 /* SFMessageThreadsViewController.xib in Resources */,
 				2F71780C1A86ACB600B1402C /* Images.xcassets in Resources */,
 				2F36FA891B210F8200B2D015 /* SFProfileViewController.xib in Resources */,
+				2F36FA911B211F3E00B2D015 /* SFBannerViewController.xib in Resources */,
 				2F36FA6A1B1F98EC00B2D015 /* SFCommunicationViewController.xib in Resources */,
 				611829909446CCCF641B549F /* SFLandingViewController.xib in Resources */,
 				2F36FA5D1B1E786B00B2D015 /* SFLocalAreaLobby.xib in Resources */,
@@ -628,6 +645,7 @@
 				2F36FA881B210F8200B2D015 /* SFProfileViewController.m in Sources */,
 				2F7178041A86ACB600B1402C /* MasterViewController.m in Sources */,
 				2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */,
+				2F36FA901B211F3E00B2D015 /* SFBannerViewController.m in Sources */,
 				2F36FA811B1F99DE00B2D015 /* SFSettings.m in Sources */,
 				2F2A831B1AF966B3006AC8B9 /* SFPersonAnnotation.m in Sources */,
 				2F7177FE1A86ACB600B1402C /* AppDelegate.m in Sources */,

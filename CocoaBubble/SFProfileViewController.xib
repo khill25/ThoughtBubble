@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFProfileViewController">
             <connections>
+                <outlet property="boopButton" destination="l2y-zZ-e7t" id="Cp1-ff-adY"/>
                 <outlet property="closeButton" destination="nzC-9n-Bg3" id="Gux-eI-p2w"/>
+                <outlet property="profileImageView" destination="fsW-4U-bdT" id="S5n-hJ-y7E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mistress of Shadow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfY-T4-VJZ">
-                    <rect key="frame" x="85" y="302" width="205" height="28"/>
+                    <rect key="frame" x="85" y="296" width="205" height="28"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -42,23 +44,29 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-Wm-rGj">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-Wm-rGj">
                     <rect key="frame" x="62" y="370" width="82" height="30"/>
                     <color key="backgroundColor" red="0.70775582169999995" green="0.13390985790000001" blue="0.28296985720000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <state key="normal" title="Coffee"/>
+                    <state key="normal" title="Coffee">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-lW-aKa">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-lW-aKa">
                     <rect key="frame" x="146" y="370" width="82" height="30"/>
                     <color key="backgroundColor" red="0.70775582169999995" green="0.13390985790000001" blue="0.28296985720000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <state key="normal" title="Tea"/>
+                    <state key="normal" title="Tea">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1U-mT-5lc">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1U-mT-5lc">
                     <rect key="frame" x="230" y="370" width="82" height="30"/>
                     <color key="backgroundColor" red="0.70775582169999995" green="0.13390985790000001" blue="0.28296985720000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <state key="normal" title="Beer"/>
+                    <state key="normal" title="Beer">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fiesty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF1-oi-IwW">
                     <rect key="frame" x="153" y="238" width="69" height="21"/>
@@ -80,12 +88,6 @@
                         <color key="titleColor" red="0.078433518660000007" green="0.32968580339999998" blue="0.62817629419999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2y-zZ-e7t">
-                    <rect key="frame" x="35" y="615" width="305" height="44"/>
-                    <color key="backgroundColor" red="0.078433518660000007" green="0.32968580339999998" blue="0.62817629419999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                    <state key="normal" title="Boop"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzC-9n-Bg3">
                     <rect key="frame" x="0.0" y="19" width="65" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -94,6 +96,15 @@
                     </state>
                     <connections>
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="5uM-3S-lhM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2y-zZ-e7t">
+                    <rect key="frame" x="39" y="615" width="305" height="44"/>
+                    <color key="backgroundColor" red="0.078433518660000007" green="0.32968580339999998" blue="0.62817629419999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                    <state key="normal" title="Boop"/>
+                    <connections>
+                        <action selector="boopButtonTapped:" destination="-1" eventType="touchUpInside" id="60C-Wm-vFT"/>
                     </connections>
                 </button>
             </subviews>
