@@ -52,6 +52,9 @@
 		2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7178361A86B2BD00B1402C /* SFMapViewController.m */; };
 		2F7178391A86B47F00B1402C /* SFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7178381A86B47F00B1402C /* SFMapViewController.xib */; };
 		2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */; };
+		2F871FFE1B3A27E100CFD9CE /* SFGraphRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F871FFD1B3A27E100CFD9CE /* SFGraphRenderingView.m */; };
+		2F8720011B3A283800CFD9CE /* SFNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8720001B3A283800CFD9CE /* SFNodeView.m */; };
+		2F8720041B3A286B00CFD9CE /* SFEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8720031B3A286B00CFD9CE /* SFEdge.m */; };
 		611820389C30E3D3F49DED92 /* SFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6118225E1044A82D0A7948C0 /* SFUtilities.m */; };
 		6118207B1644AB3D91305C3C /* SFPlaceDetailOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 611826DC2451579601D41563 /* SFPlaceDetailOverlay.m */; };
 		611821E1F1802EF9F0DD0508 /* SFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 61182713FE48CE141E52EDB6 /* SFPerson.m */; };
@@ -143,6 +146,12 @@
 		2F7178381A86B47F00B1402C /* SFMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFMapViewController.xib; sourceTree = "<group>"; };
 		2F71783B1A86B50200B1402C /* SKThoughtBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKThoughtBubbleView.h; sourceTree = "<group>"; };
 		2F71783C1A86B50200B1402C /* SKThoughtBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKThoughtBubbleView.m; sourceTree = "<group>"; };
+		2F871FFC1B3A27E100CFD9CE /* SFGraphRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGraphRenderingView.h; sourceTree = "<group>"; };
+		2F871FFD1B3A27E100CFD9CE /* SFGraphRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGraphRenderingView.m; sourceTree = "<group>"; };
+		2F871FFF1B3A283800CFD9CE /* SFNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNodeView.h; sourceTree = "<group>"; };
+		2F8720001B3A283800CFD9CE /* SFNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNodeView.m; sourceTree = "<group>"; };
+		2F8720021B3A286B00CFD9CE /* SFEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEdge.h; sourceTree = "<group>"; };
+		2F8720031B3A286B00CFD9CE /* SFEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEdge.m; sourceTree = "<group>"; };
 		41B3A9BD3DB443C2EC36FD4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		420DB044EE4D7EF5276540EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6118207A46D6DC5DB9B11033 /* SFPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPlaceAnnotation.m; sourceTree = "<group>"; };
@@ -290,6 +299,12 @@
 				2F36FA8D1B211F3E00B2D015 /* SFBannerViewController.h */,
 				2F36FA8E1B211F3E00B2D015 /* SFBannerViewController.m */,
 				2F36FA8F1B211F3E00B2D015 /* SFBannerViewController.xib */,
+				2F871FFC1B3A27E100CFD9CE /* SFGraphRenderingView.h */,
+				2F871FFD1B3A27E100CFD9CE /* SFGraphRenderingView.m */,
+				2F871FFF1B3A283800CFD9CE /* SFNodeView.h */,
+				2F8720001B3A283800CFD9CE /* SFNodeView.m */,
+				2F8720021B3A286B00CFD9CE /* SFEdge.h */,
+				2F8720031B3A286B00CFD9CE /* SFEdge.m */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -636,12 +651,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F36FA781B1F998A00B2D015 /* SFMessageTableViewCell.m in Sources */,
+				2F8720041B3A286B00CFD9CE /* SFEdge.m in Sources */,
+				2F8720011B3A283800CFD9CE /* SFNodeView.m in Sources */,
 				2F1A6A301A86B7110098BC5E /* SFNetworkingManager.m in Sources */,
 				2F71783D1A86B50200B1402C /* SKThoughtBubbleView.m in Sources */,
 				2F7178311A86B09E00B1402C /* SFPlace.h in Sources */,
 				2F36FA7C1B1F998A00B2D015 /* SFMessageThreadViewController.m in Sources */,
 				2F1A6A361A86C0C60098BC5E /* SFApiAccess.m in Sources */,
 				2F7178071A86ACB600B1402C /* DetailViewController.m in Sources */,
+				2F871FFE1B3A27E100CFD9CE /* SFGraphRenderingView.m in Sources */,
 				2F36FA881B210F8200B2D015 /* SFProfileViewController.m in Sources */,
 				2F7178041A86ACB600B1402C /* MasterViewController.m in Sources */,
 				2F7178371A86B2BD00B1402C /* SFMapViewController.m in Sources */,

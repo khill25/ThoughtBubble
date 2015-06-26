@@ -19,6 +19,7 @@
 #import "SFCommunicationViewController.h"
 #import "SFUtilities.h"
 #import "SFProfileViewController.h"
+#import "SFGraphRenderingView.h"
 
 @interface SFMapViewController () <UIGestureRecognizerDelegate>
 
@@ -142,6 +143,11 @@ BOOL hasUpdated = NO;
         [self.locationManager stopUpdatingLocation];
     }
 
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -403,6 +409,18 @@ BOOL hasUpdated = NO;
                        }
 
                    }];
+
+}
+
+-(IBAction)exploreTapped:(id)sender {
+
+    SFGraphRenderingView *renderer = [[SFGraphRenderingView alloc] initWithFrame:self.view.frame];
+    renderer.alpha = 0;
+    [self.view addSubview:renderer];
+
+    [UIView animateWithDuration:.35f delay:.0f usingSpringWithDamping:.8f initialSpringVelocity:0 options:0 animations:^{
+        renderer.alpha = 1;
+    } completion:nil];
 
 }
 
