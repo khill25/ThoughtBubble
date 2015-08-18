@@ -46,4 +46,14 @@
     return e;
 }
 
+-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+
+    NSLog(@"Node %d touched. From node.", self.nodeId);
+    if (self.delegate) {
+        [self.delegate nodeTapped:self];
+    }
+
+    [super touchesBegan:touches withEvent:event];
+}
+
 @end

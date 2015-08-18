@@ -11,7 +11,7 @@
 #import "SFEdge.h"
 #import "SFSettings.h"
 
-@interface SFGraphRenderingView() <UIScrollViewDelegate>
+@interface SFGraphRenderingView() <UIScrollViewDelegate, SFNodeViewDelegate>
 
 @property (nonatomic) NSMutableArray* nodes;
 @property (nonatomic) NSMutableArray* paths;
@@ -86,8 +86,11 @@
      * 10c01
      * 10010
      */
-    
+
+    int nodeId = 0;
     SFNodeView* me = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
+    me.nodeId = nodeId++;
+    me.delegate = self;
     me.center = CGPointMake(xAxisTransform, yAxisTransform);
     me.backgroundColor = [UIColor blueColor];
     me.clipsToBounds = NO;
@@ -97,6 +100,8 @@
 
     SFNodeView* node = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node.delegate = self;
+    node.nodeId = nodeId++;
     [me createEdge:node];
 
     y = -64 + (rand()%25);
@@ -104,6 +109,8 @@
 
     SFNodeView* node2 = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node2.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node2.nodeId = nodeId++;
+    node2.delegate = self;
     [me createEdge:node2];
 
     y = 0 + (rand()%25);
@@ -111,6 +118,8 @@
 
     SFNodeView* node3 = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node3.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node3.nodeId = nodeId++;
+    node3.delegate = self;
     [me createEdge:node3];
 
     y = 0 + (rand()%25);
@@ -118,6 +127,8 @@
 
     SFNodeView* node4 = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node4.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node4.nodeId = nodeId++;
+    node4.delegate = self;
     [me createEdge:node4];
 
     y = 64 + (rand()%15);
@@ -125,6 +136,8 @@
 
     SFNodeView* node5 = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node5.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node5.nodeId = nodeId++;
+    node5.delegate = self;
     [me createEdge:node5];
 
     y = 64 + (rand()%15);
@@ -132,7 +145,12 @@
 
     SFNodeView* node6 = [[SFNodeView alloc] initWithFrame:CGRectMake(0,0,32,32)];
     node6.center = CGPointMake(me.center.x + x, me.center.y + y);
+    node6.nodeId = nodeId++;
+    node6.delegate = self;
     [me createEdge:node6];
+
+    [node6 createEdge:node4];
+
 
     [self.nodes addObject:node];
     [self.nodes addObject:node2];
@@ -141,6 +159,9 @@
     [self.nodes addObject:node5];
     [self.nodes addObject:node6];
 
+
+
+    /*
     for(SFEdge* edge in me.edges) {
         UIBezierPath *path = [UIBezierPath bezierPath];
 
@@ -148,10 +169,12 @@
         CGPoint transformDestination = CGPointMake(edge.destination.center.x-xAxisTransform+16.0f, edge.destination.center.y-yAxisTransform+16.0f);
 
         [path moveToPoint:transformOrigin];
+        //[path addCurveToPoint:transformDestination controlPoint1:transformOrigin controlPoint2:CGPointMake(transformDestination.x,transformDestination.y + 45.0f)];
         [path addLineToPoint:transformDestination];
         [path setLineWidth:1.0f];
         CAShapeLayer* line = [CAShapeLayer layer];
         //line.frame = self.frame;
+        line.fillColor = [UIColor clearColor].CGColor;
         line.strokeColor = [UIColor blueColor].CGColor;
         line.lineWidth = 1.0f;
         line.path = path.CGPath;
@@ -160,6 +183,9 @@
         [me.layer addSublayer:line];
         [self.paths addObject:path];
     }
+    */
+
+    [self createVisualPathsForNode:me xOffset:xAxisTransform yOffset:yAxisTransform maxNodeDepth:2 currentNodeDepth:0];
 
     // No idea what to do with the graph data
     // Create paths for each of the edges???
@@ -170,6 +196,50 @@
     [self.scrollView addSubview:node4];
     [self.scrollView addSubview:node5];
     [self.scrollView addSubview:node6];
+
+}
+
+-(void)createVisualPathsForNode:(SFNodeView*)node xOffset:(CGFloat)xOffset yOffset:(CGFloat)yOffset maxNodeDepth:(int)maxDepth currentNodeDepth:(int)currentDepth {
+
+    if (currentDepth >= maxDepth) {
+        return;
+    }
+
+    if (node.LAYOUT_visited) {
+        NSLog(@"This node has already been visited, returning to avoid stack overflow.");
+        return;
+    }
+
+    if (node.edges.count > 0) {
+        NSLog(@"\nCreating %d edges for nodeId: %d\nCurrentDepth:%d", node.edges.count, node.nodeId, currentDepth);
+    }else {
+        NSLog(@"\nNo edges for nodeId: %d\nCurrentDepth:%d", node.nodeId, currentDepth);
+    }
+
+    node.LAYOUT_visited = YES;
+
+    for(SFEdge* edge in node.edges) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+
+        CGPoint transformOrigin = CGPointMake(edge.origin.center.x-xOffset+16.0f, edge.origin.center.y-yOffset+16.0f);
+        CGPoint transformDestination = CGPointMake(edge.destination.center.x-xOffset+16.0f, edge.destination.center.y-yOffset+16.0f);
+
+        [path moveToPoint:transformOrigin];
+        //[path addCurveToPoint:transformDestination controlPoint1:transformOrigin controlPoint2:CGPointMake(transformDestination.x,transformDestination.y + 45.0f)];
+        [path addLineToPoint:transformDestination];
+        [path setLineWidth:1.0f];
+        CAShapeLayer* line = [CAShapeLayer layer];
+        //line.frame = self.frame;
+        line.fillColor = [UIColor clearColor].CGColor;
+        line.strokeColor = [UIColor blueColor].CGColor;
+        line.lineWidth = 1.0f;
+        line.path = path.CGPath;
+        line.opacity = 1.0;
+
+        [node.layer addSublayer:line];
+        [self.paths addObject:path];
+        [self createVisualPathsForNode:edge.destination xOffset:edge.destination.center.x yOffset:edge.destination.center.y maxNodeDepth:maxDepth currentNodeDepth:(currentDepth+1)];
+    }
 
 }
 
@@ -195,6 +265,17 @@
 
 }
 */
+
+-(void)nodeTapped:(SFNodeView*)node {
+    NSLog(@"Node %d touched.", node.nodeId);
+
+    CGRect v = self.scrollView.frame;
+    v.size.height -=64;
+    v.origin.x = node.center.x - (v.size.width/2);
+    v.origin.y = node.center.y - (v.size.height/2);
+
+    [self.scrollView scrollRectToVisible:v animated:YES];
+}
 
 -(void)closeButtonTapped:(id)sender {
 

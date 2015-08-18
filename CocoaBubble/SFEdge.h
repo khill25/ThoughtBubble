@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) SFNodeView* origin;
 @property (weak, nonatomic) SFNodeView* destination;
-@property (nonatomic) CGPoint controlPoint;
+@property (nonatomic) BOOL isGeoConnection;
+@property (nonatomic) BOOL isFriendConnection;
+@property (nonatomic) CGPoint controlPoint; // to make pretty looking bezier lines I guess
 
 @end
